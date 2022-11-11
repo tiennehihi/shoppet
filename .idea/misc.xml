@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable-v24/border_edit_text.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable/home_slideshow.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_laucher.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_user.xml" value="0.25416666666666665" />
