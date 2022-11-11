@@ -65,7 +65,6 @@ public class LaucherActivity extends AppCompatActivity {
             switch (position){
                 case 0: return new HomeFragment();
 
-
                 case 1: return new UserFragment();
             }
             return null;

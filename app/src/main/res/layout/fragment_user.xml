@@ -5,10 +5,76 @@
     android:layout_height="match_parent"
     tools:context=".user.UserFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#FF9800"
+        android:layout_height="100dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FF9800"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_baseline_settings_24"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FF9800"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_baseline_shopping_cart_24"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FF9800"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_baseline_notifications_24"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="Đăng nhập"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:textColor="@color/black"
+                        android:id="@+id/btnlogin"
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="Đăng ký"
+                        android:layout_margin="10dp"
+                        android:background="@color/white"
+                        android:textColor="@color/black"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+    </androidx.appcompat.widget.Toolbar>
 
 </FrameLayout>
