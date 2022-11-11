@@ -29,15 +29,15 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView slideshow = view.findViewById(R.id.homeslideshow);
-//        slideshow.setBackgroundResource(R.drawable.home_slideshow);
+        slideshow.setBackgroundResource(R.drawable.home_slideshow);
         AnimationDrawable animationDrawable = (AnimationDrawable) slideshow.getBackground();
         animationDrawable.start();
 
 
-        NonScrollGridView gridView = view.findViewById(R.id.lv);
-        gridView.setNumColumns(2);
+//        NonScrollGridView gridView = view.findViewById(R.id.lv);
+//        gridView.setNumColumns(2);
 //        gridView.setAdapter(new GrAdapter(list));
-        gridView.setExpanded(true);
+//        gridView.setExpanded(true);
     }
     public class GrAdapter extends BaseAdapter {
         ArrayList<Integer> list;
