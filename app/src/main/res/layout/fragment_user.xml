@@ -59,14 +59,6 @@
                         android:textColor="@color/black"
                         android:id="@+id/btnlogin"
                         />
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:text="Đăng ký"
-                        android:layout_margin="10dp"
-                        android:background="@color/white"
-                        android:textColor="@color/black"
-                        />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
