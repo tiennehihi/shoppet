@@ -49,10 +49,37 @@
     </androidx.appcompat.widget.Toolbar>
 
     <ListView
+        android:layout_width="407dp"
+        android:layout_height="590dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="660dp"
+        android:layout_height="70dp"
+        android:background="@color/teal_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:text="Đã chọn: "
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right"
+            android:background="@color/teal_200"
+            android:src="@drawable/ic_baseline_shopping_cart_50" />
+    </androidx.appcompat.widget.Toolbar>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
