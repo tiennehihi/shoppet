@@ -1,32 +1,51 @@
-package com.example.da1pet.model;
+package com.example.da1pet.Model;
 
-public class User {
-    private int idUser;
-    private String username;
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+
+@Entity
+public class user {
+    @PrimaryKey
+    @NonNull
+    private String id_user;
+    private String name;
+    private Integer number;
     private String password;
-    private int number;
 
-    public User(int idUser, String username, String password, int number) {
-        this.idUser = idUser;
-        this.username = username;
-        this.password = password;
+    public user(String id_user, String name, Integer number, String password) {
+        this.id_user = id_user;
+        this.name = name;
         this.number = number;
+        this.password = password;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public user() {
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public String getId_user() {
+        return id_user;
     }
 
-    public String getUsername() {
-        return username;
+    public void setId_user(String id_user) {
+        this.id_user = id_user;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 
     public String getPassword() {
@@ -35,13 +54,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
     }
 }
