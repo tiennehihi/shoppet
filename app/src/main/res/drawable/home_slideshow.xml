@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:duration="4000"
+        android:duration="3000"
+        android:drawable="@drawable/corgi"/>
+    <item
+        android:duration="3000"
         android:drawable="@drawable/dogfoodslideshow"/>
     <item
-        android:duration="4000"
-        android:drawable="@drawable/phukienslideshow"/>
+        android:duration="3000"
+        android:drawable="@drawable/meo"/>
+    <item
+        android:duration="3000"
+        android:drawable="@drawable/nex_gard"/>
+    <item
+        android:duration="3000"
+        android:drawable="@drawable/cat_meo"/>
 
 </animation-list>
