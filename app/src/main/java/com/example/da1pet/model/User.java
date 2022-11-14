@@ -1,8 +1,7 @@
-package com.example.da1pet.model;
+package com.example.da1pet.Model;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 
