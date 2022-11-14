@@ -2,6 +2,9 @@
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:duration="3000"
+        android:drawable="@drawable/sale"/>
+    <item
+        android:duration="3000"
         android:drawable="@drawable/corgi"/>
     <item
         android:duration="3000"
