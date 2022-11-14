@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white"
     tools:context=".ThemSanPham">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:background="@color/teal_200"
@@ -43,5 +44,43 @@
                 android:hint="Tên sản phẩm"
                 />
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_inventory"
+            android:textColorHint="@color/black"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Số lượng sản phẩm"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_categorys"
+            android:textColorHint="@color/black"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Thể loại"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
-</ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_weight="1"
+        android:gravity="bottom|right">
+        <Button
+            android:layout_width="160dp"
+            android:text="Thêm sản phẩm"
+            android:textColor="@color/white"
+            android:background="#C14141"
+            android:layout_height="80dp"/>
+    </LinearLayout>
+
+</LinearLayout>
