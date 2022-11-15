@@ -5,18 +5,13 @@
         android:drawable="@drawable/sale"/>
     <item
         android:duration="3000"
-        android:drawable="@drawable/corgi"/>
+        android:drawable="@drawable/img1"/>
     <item
         android:duration="3000"
-        android:drawable="@drawable/dogfoodslideshow"/>
+        android:drawable="@drawable/img2"/>
     <item
         android:duration="3000"
-        android:drawable="@drawable/meo"/>
-    <item
-        android:duration="3000"
-        android:drawable="@drawable/nex_gard"/>
-    <item
-        android:duration="3000"
-        android:drawable="@drawable/cat_meo"/>
+        android:drawable="@drawable/img3"/>
+
 
 </animation-list>
