@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a5bcb6"
+    android:background="#3303DAC5"
     >
     <TextView
         android:layout_width="match_parent"
@@ -23,6 +23,7 @@
         android:layout_margin="22dp">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:background="@drawable/backgournd_input_layout"
             android:layout_height="wrap_content"
             android:id="@+id/ed_adm"
             android:textColorHint="@color/black"
@@ -30,6 +31,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:layout_margin="15dp"
                 android:layout_height="match_parent"
                 android:hint="User"
                 android:textColor="@color/black" />
@@ -37,6 +39,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ed_pass"
+            android:background="@drawable/backgournd_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
@@ -44,6 +47,7 @@
             app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:layout_margin="15dp"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
 
@@ -52,34 +56,38 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ed_copass"
             android:layout_width="match_parent"
+            android:background="@drawable/backgournd_input_layout"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:textColorHint="@color/black"
             app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:layout_margin="15dp"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
 
                 android:hint="Confirm Password"/>
         </com.google.android.material.textfield.TextInputLayout>
         <Button
+            android:background="@drawable/border_plaintext"
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
             android:text="save"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold" />
         <Button
+            android:background="@drawable/border_plaintext"
             android:id="@+id/btnbacktologin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
             android:text="Back to login"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textStyle="bold" />
     </LinearLayout>
 

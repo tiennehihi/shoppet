@@ -31,18 +31,21 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edUserName"
+            android:background="@drawable/backgournd_input_layout"
             android:layout_width="match_parent"
             android:textColorHint="@color/black"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:layout_margin="15dp"
                 android:layout_height="wrap_content"
                 android:hint="Username"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edPassWord"
+            android:background="@drawable/backgournd_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/black"
@@ -51,6 +54,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:layout_margin="15dp"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 android:inputType="textPassword" />
@@ -71,6 +75,8 @@
             android:layout_marginTop="100dp">
 
             <Button
+                android:textColor="@color/black"
+                android:background="@drawable/border_plaintext"
                 android:id="@+id/btnLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -79,6 +85,8 @@
                 android:layout_marginRight="5dp"/>
 
             <Button
+                android:textColor="@color/black"
+                android:background="@drawable/border_plaintext"
                 android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
