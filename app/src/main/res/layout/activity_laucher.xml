@@ -13,6 +13,12 @@
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="match_parent" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_baseline_chat_24"
+        android:layout_gravity="bottom|right"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:id="@+id/btmnav"
@@ -21,4 +27,5 @@
         app:itemIconTint="@color/black"
         android:background="@color/white"
         android:layout_height="wrap_content"/>
+
 </LinearLayout>

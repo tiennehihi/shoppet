@@ -49,6 +49,20 @@
 
                 android:hint="Password"/>
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_copass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColorHint="@color/black"
+            app:passwordToggleEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+
+                android:hint="Confirm Password"/>
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
@@ -56,6 +70,15 @@
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
             android:text="save"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+        <Button
+            android:id="@+id/btnbacktologin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:text="Back to login"
             android:textColor="@color/white"
             android:textStyle="bold" />
     </LinearLayout>

@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:duration="4000"
-        android:drawable="@drawable/dogfoodslideshow"/>
+        android:duration="3000"
+        android:drawable="@drawable/sale"/>
     <item
-        android:duration="4000"
-        android:drawable="@drawable/phukienslideshow"/>
+        android:duration="3000"
+        android:drawable="@drawable/img1"/>
+    <item
+        android:duration="3000"
+        android:drawable="@drawable/img2"/>
+    <item
+        android:duration="3000"
+        android:drawable="@drawable/img3"/>
+
 
 </animation-list>
