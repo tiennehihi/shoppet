@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.da1pet.Lienhe;
 import com.example.da1pet.LoginActivity;
 import com.example.da1pet.R;
 import com.example.da1pet.ThemSanPham;
@@ -34,6 +35,10 @@ public class UserFragment extends Fragment {
         });
         view.findViewById(R.id.tvthemsp).setOnClickListener(v -> {
             Intent intent = new Intent(this.getActivity(), ThemSanPham.class);
+            startActivity(intent);
+        });
+        view.findViewById(R.id.btnlienhe).setOnClickListener(v -> {
+            Intent intent = new Intent(this.getActivity(), Lienhe.class);
             startActivity(intent);
         });
     }
