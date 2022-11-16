@@ -12,12 +12,18 @@ import com.example.da1pet.Model.user;
 import java.util.List;
 @Dao
 public interface UserDAO {
-    @Query("select * from user")
-    List<user> getAll();
+
     @Insert
     void insert(user user);
     @Update
     void update(user user);
     @Delete
     void delete(user user);
+    @Query("select * from user")
+    List<user> getAll();
+    @Query("select *from user where id_user = :username and password= :password limit 1")
+    user checkLogin(String username, String password);
+    @Query("select *from user where id_user = :username limit 1")
+    user getUserByCode(String username);
+
 }
