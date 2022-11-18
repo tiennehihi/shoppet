@@ -6,8 +6,8 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 @Entity(foreignKeys = {
-        @ForeignKey(entity = categorys.class, parentColumns = "id_category", childColumns = "id_category", onDelete = ForeignKey.CASCADE)})
-public class products {
+        @ForeignKey(entity = Categorys.class, parentColumns = "id_category", childColumns = "id_category", onDelete = ForeignKey.CASCADE)})
+public class Products {
     @PrimaryKey
     @NonNull
     private String id_products;
@@ -15,14 +15,14 @@ public class products {
     private Integer inventory;
     private String name_products;
 
-    public products(String id_products, String id_category, Integer inventory, String name_products) {
+    public Products(String id_products, String id_category, Integer inventory, String name_products) {
         this.id_products = id_products;
         this.id_category = id_category;
         this.inventory = inventory;
         this.name_products = name_products;
     }
 
-    public products() {
+    public Products() {
     }
 
     public String getId_products() {

@@ -7,17 +7,17 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
-import com.example.da1pet.Model.products;
+import com.example.da1pet.Model.Products;
 
 import java.util.List;
 @Dao
 public interface ProductsDAO {
-    @Query("select * from products")
-    List<products> getAll();
+    @Query("select * from Products")
+    List<Products> getAll();
     @Insert
-    void insert(products products);
+    void insert(Products products);
     @Update
-    void update(products products);
+    void update(Products products);
     @Delete
-    void delete(products products);
+    void delete(Products products);
 }

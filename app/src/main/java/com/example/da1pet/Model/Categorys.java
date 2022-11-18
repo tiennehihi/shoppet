@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class categorys {
+public class Categorys {
     @PrimaryKey
     @NonNull
     private String id_category;
@@ -13,14 +13,14 @@ public class categorys {
     private String note;
     private Integer price;
 
-    public categorys(String id_category, String name, String note, Integer price) {
+    public Categorys(String id_category, String name, String note, Integer price) {
         this.id_category = id_category;
         this.name = name;
         this.note = note;
         this.price = price;
     }
 
-    public categorys() {
+    public Categorys() {
     }
 
     public String getId_category() {

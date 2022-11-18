@@ -6,29 +6,30 @@ import androidx.room.PrimaryKey;
 
 
 @Entity
-public class user {
+public class User {
     @PrimaryKey
     @NonNull
     private String id_user;
     private String name;
-    private Integer number;
+    private String number;
     private String password;
 
-    public user(String id_user, String name, Integer number, String password) {
+    public User(@NonNull String id_user, String name, String number, String password) {
         this.id_user = id_user;
         this.name = name;
         this.number = number;
         this.password = password;
     }
 
-    public user() {
+    public User() {
     }
 
+    @NonNull
     public String getId_user() {
         return id_user;
     }
 
-    public void setId_user(String id_user) {
+    public void setId_user(@NonNull String id_user) {
         this.id_user = id_user;
     }
 
@@ -40,11 +41,11 @@ public class user {
         this.name = name;
     }
 
-    public Integer getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Integer number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
