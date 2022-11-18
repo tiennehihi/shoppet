@@ -1,5 +1,6 @@
 package com.example.da1pet.home;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
@@ -7,18 +8,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.example.da1pet.R;
+import com.example.da1pet.Thongbao;
 
 import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
+    ListView lv;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,6 +40,32 @@ public class HomeFragment extends Fragment {
         AnimationDrawable animationDrawable = (AnimationDrawable) slideshow.getBackground();
         animationDrawable.start();
 
+        //textFilter
+//        lv.setTextFilterEnabled(true);
+//        EditText edsearch = (EditText) view.findViewById(R.id.edtsearch);
+//        edsearch.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        });
+
+        //---
+
+        view.findViewById(R.id.imgthongb).setOnClickListener(v -> {
+            Intent intent = new Intent(this.getActivity(), Thongbao.class);
+            startActivity(intent);
+        });
 
 //        NonScrollGridView gridView = view.findViewById(R.id.lv);
 //        gridView.setNumColumns(2);
