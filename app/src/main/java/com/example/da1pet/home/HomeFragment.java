@@ -1,5 +1,6 @@
 package com.example.da1pet.home;
 
+import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
@@ -13,18 +14,32 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.Model.Products;
 import com.example.da1pet.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeFragment extends Fragment {
+    Context context;
+    List<Products> list;
+    DbRoom db;
+
+
+//    public HomeFragment(Context context, List<Products> list) {
+//        this.context = context;
+//        this.list = list;
+//        this.db = DbRoom.getInstance(context);
+//    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -33,11 +48,6 @@ public class HomeFragment extends Fragment {
         AnimationDrawable animationDrawable = (AnimationDrawable) slideshow.getBackground();
         animationDrawable.start();
 
-
-//        NonScrollGridView gridView = view.findViewById(R.id.lv);
-//        gridView.setNumColumns(2);
-//        gridView.setAdapter(new GrAdapter(list));
-//        gridView.setExpanded(true);
     }
     public class GrAdapter extends BaseAdapter {
         ArrayList<Integer> list;

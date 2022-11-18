@@ -7,12 +7,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.example.da1pet.Model.Products;
 import com.example.da1pet.home.HomeFragment;
 import com.example.da1pet.user.UserFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
