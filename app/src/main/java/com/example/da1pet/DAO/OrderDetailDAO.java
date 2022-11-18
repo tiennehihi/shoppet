@@ -7,17 +7,17 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
-import com.example.da1pet.Model.order_detail;
+import com.example.da1pet.Model.Order_detail;
 
 import java.util.List;
 @Dao
 public interface OrderDetailDAO {
-    @Query("select * from order_detail")
-    List<order_detail> getAll();
+    @Query("select * from Order_detail")
+    List<Order_detail> getAll();
     @Insert
-    void insert(order_detail order_detail);
+    void insert(Order_detail order_detail);
     @Update
-    void update(order_detail order_detail);
+    void update(Order_detail order_detail);
     @Delete
-    void delete(order_detail order_detail);
+    void delete(Order_detail order_detail);
 }

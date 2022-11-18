@@ -8,20 +8,20 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 
-import com.example.da1pet.Model.categorys;
+import com.example.da1pet.Model.Categorys;
 
 import java.util.List;
 
 @Dao
 public interface CategoryDAO {
-      @Query("select * from categorys")
-      List<categorys> getAll();
+      @Query("select * from Categorys")
+      List<Categorys> getAll();
       @Insert
-      void insertTLoai(categorys categorys);
+      void insertTLoai(Categorys categorys);
       @Update
-      void updateTLoai(categorys categorys);
+      void updateTLoai(Categorys categorys);
       @Delete
-      void deleteTLoai(categorys categorys);
+      void deleteTLoai(Categorys categorys);
       //huan test
 
       //fsdfsdf

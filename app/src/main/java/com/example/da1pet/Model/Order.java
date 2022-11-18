@@ -6,8 +6,8 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 
-@Entity(foreignKeys = {@ForeignKey(entity = user.class, parentColumns = "id_user", childColumns = "id_user", onDelete = ForeignKey.CASCADE)})
-public class order {
+@Entity(foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id_user", childColumns = "id_user", onDelete = ForeignKey.CASCADE)})
+public class Order {
     @PrimaryKey
     @NonNull
     private String id_order;
@@ -15,14 +15,14 @@ public class order {
     private String status;
     private String total;
 
-    public order(String id_order, String id_user, String status, String total) {
+    public Order(String id_order, String id_user, String status, String total) {
         this.id_order = id_order;
         this.id_user = id_user;
         this.status = status;
         this.total = total;
     }
 
-    public order() {
+    public Order() {
     }
 
     public String getId_order() {
