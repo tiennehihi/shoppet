@@ -1,6 +1,7 @@
 package com.example.da1pet.home;
 
 import android.graphics.drawable.AnimationDrawable;
+import android.media.Image;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.da1pet.R;
+import com.example.da1pet.TestProducts;
 
 import java.util.ArrayList;
 
@@ -32,17 +35,22 @@ public class HomeFragment extends Fragment {
         slideshow.setBackgroundResource(R.drawable.home_slideshow);
         AnimationDrawable animationDrawable = (AnimationDrawable) slideshow.getBackground();
         animationDrawable.start();
+        ArrayList<TestProducts> list = new ArrayList<>();
+        list.add(new TestProducts(R.drawable.img2,"dog",1000000));
+        list.add(new TestProducts(R.drawable.img2,"dog",1000000));
+        list.add(new TestProducts(R.drawable.img2,"dog",1000000));
+        list.add(new TestProducts(R.drawable.img2,"dog",1000000));
+        list.add(new TestProducts(R.drawable.img2,"dog",1000000));
 
-
-//        NonScrollGridView gridView = view.findViewById(R.id.lv);
-//        gridView.setNumColumns(2);
-//        gridView.setAdapter(new GrAdapter(list));
-//        gridView.setExpanded(true);
+        NonScrollGridView gridView = view.findViewById(R.id.lv);
+        gridView.setNumColumns(2);
+        gridView.setAdapter(new GrAdapter(list));
+        gridView.setExpanded(true);
     }
     public class GrAdapter extends BaseAdapter {
-        ArrayList<Integer> list;
+        ArrayList<TestProducts> list;
 
-        public GrAdapter(ArrayList<Integer> list) {
+        public GrAdapter(ArrayList<TestProducts> list) {
             this.list = list;
         }
 
@@ -63,7 +71,14 @@ public class HomeFragment extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.progrid,parent,false);
+            ImageView img = convertView.findViewById(R.id.imggrid);
+            TextView tvtensp = convertView.findViewById(R.id.tenspgrid);
+            TextView tvgia = convertView.findViewById(R.id.giagrid);
+            TestProducts test = list.get(position);
+            img.setImageResource(test.getImg());
+            tvtensp.setText(test.getTensp());
+            tvgia.setText(String.valueOf(test.getGia()));
             return convertView;
         }
     }
