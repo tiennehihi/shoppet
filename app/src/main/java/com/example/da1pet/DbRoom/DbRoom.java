@@ -11,14 +11,14 @@ import com.example.da1pet.DAO.OrderDAO;
 import com.example.da1pet.DAO.OrderDetailDAO;
 import com.example.da1pet.DAO.ProductsDAO;
 import com.example.da1pet.DAO.UserDAO;
-import com.example.da1pet.Model.categorys;
-import com.example.da1pet.Model.order;
-import com.example.da1pet.Model.order_detail;
-import com.example.da1pet.Model.products;
-import com.example.da1pet.Model.user;
+import com.example.da1pet.Model.Categorys;
+import com.example.da1pet.Model.Order_detail;
+import com.example.da1pet.Model.User;
+import com.example.da1pet.Model.Order;
+import com.example.da1pet.Model.Products;
 
 
-@Database(entities = {categorys.class, order.class, products.class, order_detail.class, user.class}, exportSchema = false , version = 2)
+@Database(entities = {Categorys.class, Order.class, Products.class, Order_detail.class, User.class}, exportSchema = false , version = 2)
 public abstract class DbRoom extends RoomDatabase {
     private static final String DB_NAME = "DA1";
     private static DbRoom instance;
