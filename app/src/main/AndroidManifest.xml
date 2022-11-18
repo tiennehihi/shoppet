@@ -45,6 +45,9 @@
         </provider>
 
         <activity
+            android:name=".Thongbao"
+            android:exported="false" />
+        <activity
             android:name=".Lienhe"
             android:exported="false" />
         <activity

@@ -32,12 +32,22 @@
                     android:background="@color/teal_200"
                     android:layout_margin="10dp"
                     android:src="@drawable/ic_baseline_shopping_cart_24"/>
+
                 <ImageButton
+                    android:id="@+id/imgthongbao"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/teal_200"
                     android:layout_margin="10dp"
-                    android:src="@drawable/ic_baseline_notifications_24"/>
+                    android:background="@color/teal_200"
+                    android:src="@drawable/ic_baseline_notifications_24" />
+
+                <ImageButton
+                    android:id="@+id/imglhe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/teal_200"
+                    android:src="@drawable/ic_lhe24" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,24 +62,18 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:orientation="horizontal">
+
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:text="Đăng Xuất"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/white"
-                        android:textColor="@color/black"
                         android:id="@+id/btnlogin"
-                        />
-                    <Button
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
-                        android:text="Liên hệ"
                         android:layout_marginTop="10dp"
                         android:background="@color/white"
+                        android:text="Đăng nhập"
                         android:textColor="@color/black"
-                        android:id="@+id/btnlienhe"
-                        />
+                        android:layout_marginRight="5dp"/>
+
+
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
