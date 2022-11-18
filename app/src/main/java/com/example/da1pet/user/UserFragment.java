@@ -15,6 +15,7 @@ import com.example.da1pet.Lienhe;
 import com.example.da1pet.LoginActivity;
 import com.example.da1pet.R;
 import com.example.da1pet.ThemSanPham;
+import com.example.da1pet.Thongbao;
 
 
 public class UserFragment extends Fragment {
@@ -37,8 +38,12 @@ public class UserFragment extends Fragment {
             Intent intent = new Intent(this.getActivity(), ThemSanPham.class);
             startActivity(intent);
         });
-        view.findViewById(R.id.btnlienhe).setOnClickListener(v -> {
+        view.findViewById(R.id.imglhe).setOnClickListener(v -> {
             Intent intent = new Intent(this.getActivity(), Lienhe.class);
+            startActivity(intent);
+        });
+        view.findViewById(R.id.imgthongbao).setOnClickListener(v -> {
+            Intent intent = new Intent(this.getActivity(), Thongbao.class);
             startActivity(intent);
         });
     }

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../layout/custom_preview.xml" value="0.20471014492753623" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable-v24/border_edit_text.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable/home_slideshow.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_laucher.xml" value="0.25416666666666665" />
@@ -14,13 +15,21 @@
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/xml/file_paths.xml" value="0.253125" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/ic_lhe24.xml" value="0.1385" />
         <entry key="app/src/main/res/drawable/ic_location.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/ic_phone.xml" value="0.226" />
+        <entry key="app/src/main/res/drawable/ic_thongbao.xml" value="0.226" />
+        <entry key="app/src/main/res/layout/activity_laucher.xml" value="0.3302083333333333" />
         <entry key="app/src/main/res/layout/activity_lienhe.xml" value="0.31614583333333335" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3302083333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3302083333333333" />
+        <entry key="app/src/main/res/layout/activity_shoppet.xml" value="0.3302083333333333" />
+        <entry key="app/src/main/res/layout/activity_them_san_pham.xml" value="0.3302083333333333" />
+        <entry key="app/src/main/res/layout/activity_thongbao.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/dialog_dangky.xml" value="0.3302083333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16510416666666666" />
-        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.3302083333333333" />
+        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_phu_kien.xml" value="0.3302083333333333" />
         <entry key="app/src/main/res/layout/item_thu_cung.xml" value="0.3302083333333333" />
       </map>
