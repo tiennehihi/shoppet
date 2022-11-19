@@ -45,7 +45,7 @@ public class LaucherActivity extends AppCompatActivity {
                         vp.setCurrentItem(0);
                         break;
 
-                    case R.id.user:
+                    case R.id.nav_user:
                         vp.setCurrentItem(2);
                         break;
                 }

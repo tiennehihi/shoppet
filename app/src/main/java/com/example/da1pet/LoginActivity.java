@@ -41,6 +41,10 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this,LaucherActivity.class);
             startActivity(intent);
         });
+
+
+
+
         findViewById(R.id.btnRegister).setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             View view = LayoutInflater.from(this).inflate(R.layout.dialog_dangky,null,false);

@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.Model.User;
+import com.example.da1pet.home.HomeFragment;
 
 public class LCHMainActivity2 extends AppCompatActivity {
     ProgressBar p;
@@ -30,7 +31,7 @@ public class LCHMainActivity2 extends AppCompatActivity {
                     }catch (InterruptedException e){
                         e.printStackTrace();
                     }
-                    p.incrementProgressBy(5);
+                    p.incrementProgressBy(4);
                 }
             }
         }.start();
@@ -40,11 +41,11 @@ public class LCHMainActivity2 extends AppCompatActivity {
             public void run() {
                 DbRoom db = DbRoom.getInstance(LCHMainActivity2.this);
                 if(db.userDAO().getAll().size() == 0){
-                    db.userDAO().insert(new User("admin","Nguyễn Văn A","0799187604","123"));
+                    db.userDAO().insert(new User("admin","Đinh Thành Huân","0799187604","123"));
                 }
-                Intent intent = new Intent(LCHMainActivity2.this,LoginActivity.class);
+                Intent intent = new Intent(LCHMainActivity2.this, LoginActivity.class);
                 startActivity(intent);
             }
-        }, 3000);
+        }, 2000);
     }
 }

@@ -66,6 +66,7 @@
                 android:scaleType="fitCenter" />
 
             <LinearLayout
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -102,6 +103,7 @@
                             android:textStyle="bold" />
 
                         <TextView
+
                             android:id="@+id/tvGiaTien"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -110,6 +112,7 @@
                             android:textSize="14dp" />
 
                         <TextView
+
                             android:id="@+id/tvGioiTinh"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -118,6 +121,7 @@
                             android:textSize="14dp" />
 
                         <TextView
+
                             android:id="@+id/tvTuoi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -126,14 +130,15 @@
                             android:textSize="14dp" />
 
                         <Button
-                            android:id="@+id/btnXem"
+                            android:id="@+id/btnXem1"
                             android:layout_width="130dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
                             android:layout_marginLeft="-30dp"
                             android:layout_marginTop="20dp"
                             android:backgroundTint="#ffc0cb"
-                            android:text="Đặt mua" />
+                            android:text="Đặt mua"
+                            />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -196,7 +201,7 @@
                             android:textSize="14dp" />
 
                         <Button
-
+                            android:id="@+id/btnXem2"
                             android:layout_width="130dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
@@ -264,7 +269,7 @@
                             android:textSize="14dp" />
 
                         <Button
-
+                            android:id="@+id/btnXem3"
                             android:layout_width="130dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"
@@ -332,7 +337,7 @@
                             android:textSize="14dp" />
 
                         <Button
-                            android:id="@+id/btnXem2"
+                            android:id="@+id/btnXem4"
                             android:layout_width="130dp"
                             android:layout_height="40dp"
                             android:layout_gravity="center"

@@ -1,6 +1,7 @@
 package com.example.da1pet.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
@@ -12,9 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.LaucherActivity;
 import com.example.da1pet.Model.Products;
 import com.example.da1pet.R;
 
@@ -26,13 +29,14 @@ public class HomeFragment extends Fragment {
     Context context;
     List<Products> list;
     DbRoom db;
+    Button btnXem1;
 
 
-//    public HomeFragment(Context context, List<Products> list) {
-//        this.context = context;
-//        this.list = list;
-//        this.db = DbRoom.getInstance(context);
-//    }
+    //    public HomeFragment(Context context, List<Products> list) {
+    //        this.context = context;
+    //        this.list = list;
+    //        this.db = DbRoom.getInstance(context);
+    //    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,6 +53,10 @@ public class HomeFragment extends Fragment {
         animationDrawable.start();
 
     }
+
+
+
+
     public class GrAdapter extends BaseAdapter {
         ArrayList<Integer> list;
 
@@ -77,5 +85,6 @@ public class HomeFragment extends Fragment {
             return convertView;
         }
     }
+
 
 }
