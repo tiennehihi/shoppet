@@ -22,9 +22,6 @@ public interface CategoryDAO {
       void updateTLoai(Categorys categorys);
       @Delete
       void deleteTLoai(Categorys categorys);
-      //huan test
-
-      //fsdfsdf
   }
 
 

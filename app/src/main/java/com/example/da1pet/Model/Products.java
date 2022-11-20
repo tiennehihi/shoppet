@@ -1,9 +1,14 @@
 package com.example.da1pet.Model;
 
+import android.graphics.Bitmap;
+
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+
+import java.sql.Blob;
 
 @Entity(foreignKeys = {
         @ForeignKey(entity = Categorys.class, parentColumns = "id_category", childColumns = "id_category", onDelete = ForeignKey.CASCADE)})
@@ -14,16 +19,49 @@ public class Products {
     private String id_category;
     private Integer inventory;
     private String name_products;
+    private Integer price;
+    private String describe;
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+    private byte[] img_product;
 
-    public Products(String id_products, String id_category, Integer inventory, String name_products) {
+    public Products(@NonNull String id_products, String id_category, Integer inventory, String name_products, Integer price, String describe, byte[] img_product) {
         this.id_products = id_products;
         this.id_category = id_category;
         this.inventory = inventory;
         this.name_products = name_products;
+        this.price = price;
+        this.describe = describe;
+        this.img_product = img_product;
     }
 
     public Products() {
     }
+
+    public byte[] getImg_product() {
+        return img_product;
+    }
+
+    public void setImg_product(byte[] img_product) {
+        this.img_product = img_product;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+
 
     public String getId_products() {
         return id_products;

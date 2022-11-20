@@ -10,14 +10,11 @@ public class Categorys {
     @NonNull
     private String id_category;
     private String name;
-    private String note;
-    private Integer price;
 
-    public Categorys(String id_category, String name, String note, Integer price) {
+
+    public Categorys(String id_category, String name) {
         this.id_category = id_category;
         this.name = name;
-        this.note = note;
-        this.price = price;
     }
 
     public Categorys() {
@@ -39,19 +36,4 @@ public class Categorys {
         this.name = name;
     }
 
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
 }

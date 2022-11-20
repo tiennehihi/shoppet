@@ -34,14 +34,26 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/edt_tensp"
                 android:textColorHint="@color/black"
                 >
                 <EditText
+                    android:id="@+id/edt_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ID sản phẩm"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                >
+                <EditText
+                    android:id="@+id/edt_tensp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Tên sản phẩm"
@@ -50,34 +62,33 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/edt_inventory"
                 android:textColorHint="@color/black"
                 >
                 <EditText
+                    android:id="@+id/edt_inventory"
                     android:layout_width="match_parent"
+                    android:inputType="number"
                     android:layout_height="wrap_content"
                     android:hint="Số lượng sản phẩm"
                     />
             </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chọn thể loại"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spntheloai"
+                />
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/edt_categorys"
                 android:textColorHint="@color/black"
                 >
                 <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Thể loại"
-                    />
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/edtgia"
-                android:textColorHint="@color/black"
-                >
-                <EditText
+                    android:id="@+id/edtgia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -87,10 +98,10 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/edtmota"
                 android:textColorHint="@color/black"
                 >
                 <EditText
+                    android:id="@+id/edtmota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Mô tả"
@@ -117,6 +128,7 @@
         <Button
             android:layout_width="160dp"
             android:text="Thêm sản phẩm"
+            android:id="@+id/btnthemsanpham"
             android:textColor="@color/white"
             android:background="#C14141"
             android:layout_height="80dp"/>
