@@ -65,294 +65,297 @@
                 android:layout_height="138dp"
                 android:scaleType="fitCenter" />
 
-            <LinearLayout
-                android:layout_marginTop="20dp"
+<!--            <LinearLayout-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="171dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="#bbeebb">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:src="@drawable/husky" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="209dp"-->
+<!--                        android:layout_height="173dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="-100dp"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:paddingStart="10dp">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/tvTenThuCung"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:paddingBottom="5dp"-->
+<!--                            android:text="Husky Sibir đen trắng"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="16dp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:id="@+id/tvGiaTien"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giá tiền:2 triệu"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:id="@+id/tvGioiTinh"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giới tính:Đực"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:id="@+id/tvTuoi"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Tuổi: 3 Tháng"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/btnXem1"-->
+<!--                            android:layout_width="130dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginLeft="-30dp"-->
+<!--                            android:layout_marginTop="20dp"-->
+<!--                            android:backgroundTint="#ffc0cb"-->
+<!--                            android:text="Đặt mua"-->
+<!--                            />-->
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+
+
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="171dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="#bbeebb">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:src="@drawable/homemeo" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="209dp"-->
+<!--                        android:layout_height="173dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="-100dp"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:paddingStart="10dp">-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:paddingBottom="5dp"-->
+<!--                            android:text="Mèo Munchkin."-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="16dp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giá tiền:1 triệu"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giới tính:Cái"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Tuổi: 5 Tháng"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/btnXem2"-->
+<!--                            android:layout_width="130dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginLeft="-30dp"-->
+<!--                            android:layout_marginTop="20dp"-->
+<!--                            android:backgroundTint="#ffc0cb"-->
+<!--                            android:text="Đặt mua" />-->
+<!--                    </LinearLayout>-->
+
+
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="171dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="#bbeebb">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:src="@drawable/corgi" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="209dp"-->
+<!--                        android:layout_height="173dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="-100dp"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:paddingStart="10dp">-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:paddingBottom="5dp"-->
+<!--                            android:text="Chó Corgi Pembroke"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="16dp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giá tiền:1 triệu"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giới tính:Cái"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Tuổi: 5 Tháng"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/btnXem3"-->
+<!--                            android:layout_width="130dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginLeft="-30dp"-->
+<!--                            android:layout_marginTop="20dp"-->
+<!--                            android:backgroundTint="#ffc0cb"-->
+<!--                            android:text="Đặt mua" />-->
+<!--                    </LinearLayout>-->
+
+
+<!--                </LinearLayout>-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="171dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:background="#bbeebb">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:src="@drawable/sphynx" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="209dp"-->
+<!--                        android:layout_height="173dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginTop="-100dp"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:paddingStart="10dp">-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:paddingBottom="5dp"-->
+<!--                            android:text="Mèo Sphynx không lông"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="16dp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giá tiền:1 triệu"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Giới tính:Cái"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <TextView-->
+
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center|start"-->
+<!--                            android:text="Tuổi: 5 Tháng"-->
+<!--                            android:textSize="14dp" />-->
+
+<!--                        <Button-->
+<!--                            android:id="@+id/btnXem4"-->
+<!--                            android:layout_width="130dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginLeft="-30dp"-->
+<!--                            android:layout_marginTop="20dp"-->
+<!--                            android:backgroundTint="#ffc0cb"-->
+<!--                            android:text="Đặt mua" />-->
+<!--                    </LinearLayout>-->
+
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+            <com.example.da1pet.home.NonScrollGridView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="171dp"
-                    android:orientation="vertical"
-                    android:background="#bbeebb">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:padding="10dp"
-                        android:src="@drawable/husky" />
-
-                    <LinearLayout
-                        android:layout_width="209dp"
-                        android:layout_height="173dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-100dp"
-                        android:orientation="vertical"
-                        android:paddingStart="10dp">
-
-                        <TextView
-                            android:id="@+id/tvTenThuCung"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:paddingBottom="5dp"
-                            android:text="Husky Sibir đen trắng"
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-
-                            android:id="@+id/tvGiaTien"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giá tiền:2 triệu"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:id="@+id/tvGioiTinh"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giới tính:Đực"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:id="@+id/tvTuoi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Tuổi: 3 Tháng"
-                            android:textSize="14dp" />
-
-                        <Button
-                            android:id="@+id/btnXem1"
-                            android:layout_width="130dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="-30dp"
-                            android:layout_marginTop="20dp"
-                            android:backgroundTint="#ffc0cb"
-                            android:text="Đặt mua"
-                            />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="171dp"
-                    android:orientation="vertical"
-                    android:background="#bbeebb">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:padding="10dp"
-                        android:src="@drawable/homemeo" />
-
-                    <LinearLayout
-                        android:layout_width="209dp"
-                        android:layout_height="173dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-100dp"
-                        android:orientation="vertical"
-                        android:paddingStart="10dp">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:paddingBottom="5dp"
-                            android:text="Mèo Munchkin."
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giá tiền:1 triệu"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giới tính:Cái"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Tuổi: 5 Tháng"
-                            android:textSize="14dp" />
-
-                        <Button
-                            android:id="@+id/btnXem2"
-                            android:layout_width="130dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="-30dp"
-                            android:layout_marginTop="20dp"
-                            android:backgroundTint="#ffc0cb"
-                            android:text="Đặt mua" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="171dp"
-                    android:orientation="vertical"
-                    android:background="#bbeebb">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:padding="10dp"
-                        android:src="@drawable/corgi" />
-
-                    <LinearLayout
-                        android:layout_width="209dp"
-                        android:layout_height="173dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-100dp"
-                        android:orientation="vertical"
-                        android:paddingStart="10dp">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:paddingBottom="5dp"
-                            android:text="Chó Corgi Pembroke"
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giá tiền:1 triệu"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giới tính:Cái"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Tuổi: 5 Tháng"
-                            android:textSize="14dp" />
-
-                        <Button
-                            android:id="@+id/btnXem3"
-                            android:layout_width="130dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="-30dp"
-                            android:layout_marginTop="20dp"
-                            android:backgroundTint="#ffc0cb"
-                            android:text="Đặt mua" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="171dp"
-                    android:orientation="vertical"
-                    android:background="#bbeebb">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:padding="10dp"
-                        android:src="@drawable/sphynx" />
-
-                    <LinearLayout
-                        android:layout_width="209dp"
-                        android:layout_height="173dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="-100dp"
-                        android:orientation="vertical"
-                        android:paddingStart="10dp">
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:paddingBottom="5dp"
-                            android:text="Mèo Sphynx không lông"
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giá tiền:1 triệu"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Giới tính:Cái"
-                            android:textSize="14dp" />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|start"
-                            android:text="Tuổi: 5 Tháng"
-                            android:textSize="14dp" />
-
-                        <Button
-                            android:id="@+id/btnXem4"
-                            android:layout_width="130dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="-30dp"
-                            android:layout_marginTop="20dp"
-                            android:backgroundTint="#ffc0cb"
-                            android:text="Đặt mua" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
+                android:id="@+id/nonscrollgridview"/>
         </LinearLayout>
 
     </ScrollView>

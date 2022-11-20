@@ -94,14 +94,21 @@ public class ThemSanPham extends AppCompatActivity {
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
                 imgproduct.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
                 imginbyte = outputStream.toByteArray();
-
                 findViewById(R.id.btnthemsanpham).setOnClickListener(v -> {
                     if (edtid.getText().toString() == ""|| edtname.getText().toString() == ""|| edtinventory.getText().toString() == ""||  edtprice.getText().toString() == ""|| edtdescap.getText().toString() == ""){
                         Toast.makeText(this, "Không được để trống trường nào", Toast.LENGTH_LONG).show();
                     }else {
                         try {
-                            db.productsDAO().insert(new Products(edtid.getText().toString(),String.valueOf(spinner.getSelectedItemPosition()+1),Integer.parseInt(edtinventory.getText().toString()),edtname.getText().toString(),Integer.parseInt(edtprice.getText().toString()),edtdescap.getText().toString(),imginbyte));
+                            db.productsDAO().insert(new Products(edtid.getText().toString()
+                                    ,String.valueOf(spinner.getSelectedItemPosition()+1)
+                                    ,Integer.parseInt(edtinventory.getText().toString())
+                                    ,edtname.getText().toString()
+                                    ,Integer.parseInt(edtprice.getText().toString())
+                                    ,edtdescap.getText().toString()
+                                    ,imginbyte));
                             Toast.makeText(this, "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(this,LaucherActivity.class);
+                            startActivity(intent);
                         }catch (Exception e){
                             Log.d(TAG, e.getMessage());
                         }

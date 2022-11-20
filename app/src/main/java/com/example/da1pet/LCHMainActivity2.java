@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.widget.ProgressBar;
 
 import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.Model.Categorys;
 import com.example.da1pet.Model.User;
 import com.example.da1pet.home.HomeFragment;
 
@@ -45,6 +46,13 @@ public class LCHMainActivity2 extends AppCompatActivity {
                 }
                 Intent intent = new Intent(LCHMainActivity2.this, LoginActivity.class);
                 startActivity(intent);
+                try {
+                    db.categoryDAO().insertTLoai(new Categorys(1+"","Vật nuôi"));
+                    db.categoryDAO().insertTLoai(new Categorys(2+"","Thức ăn"));
+                    db.categoryDAO().insertTLoai(new Categorys(3+"","Phụ kiện"));
+                }catch (Exception e){
+                    e.getMessage();
+                }
             }
         }, 2000);
     }
