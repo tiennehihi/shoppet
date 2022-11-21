@@ -48,6 +48,9 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+        <activity
+            android:name=".Shop.Shoppet"
+            android:exported="false"/>
 
         <activity
             android:name=".Thongbao"
@@ -72,6 +75,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".home.HomeFragment"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
