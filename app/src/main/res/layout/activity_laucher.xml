@@ -7,19 +7,23 @@
     android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".LaucherActivity">
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vp"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginBottom="70dp"
-        android:layout_marginRight="10dp"
-        android:src="@drawable/ic_baseline_chat_24" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="70dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_baseline_chat_24" />
+    </FrameLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:id="@+id/btmnav"

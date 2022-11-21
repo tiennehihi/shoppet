@@ -65,6 +65,7 @@ public class HomeFragment extends Fragment {
                 gridView = view.findViewById(R.id.nonscrollgridview);
                 gridView.setAdapter(adapter);
                 gridView.setNumColumns(2);
+                gridView.setExpanded(true);
         }catch (Exception e){
             Log.e(TAG, "onViewCreated: "+e.getMessage());
         }
@@ -99,14 +100,18 @@ public class HomeFragment extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.progrid,parent,false);
-            ImageView imageView = convertView.findViewById(R.id.imggrid);
-            TextView textView = convertView.findViewById(R.id.tenspgrid);
-            TextView textView1 = convertView.findViewById(R.id.giagrid);
-            Products products = list.get(position);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(products.getImg_product(), 0, products.getImg_product().length);
-            imageView.setImageBitmap(bitmap);
-            textView.setText(products.getName_products());
-            textView1.setText(String.valueOf(products.getPrice()));
+            try {
+                ImageView imageView = convertView.findViewById(R.id.imggrid);
+                TextView textView = convertView.findViewById(R.id.tenspgrid);
+                TextView textView1 = convertView.findViewById(R.id.giagrid);
+                Products products = list.get(position);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(products.getImg_product(), 0, products.getImg_product().length);
+                imageView.setImageBitmap(bitmap);
+                textView.setText(products.getName_products());
+                textView1.setText(String.valueOf(products.getPrice()));
+            }catch (Exception e){
+                e.getMessage();
+            }
             convertView.setOnClickListener(v -> {
                 Intent intent = new Intent(HomeFragment.this.getActivity(), ProductActivity.class);
                 startActivity(intent);
