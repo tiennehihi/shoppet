@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import com.example.da1pet.R;
-import com.example.da1pet.home.HomeFragment;
+import com.example.da1pet.home.Home;
 public class Shoppet extends AppCompatActivity {
    ImageButton imageButton;
     @Override
@@ -16,7 +16,7 @@ public class Shoppet extends AppCompatActivity {
 
       imageButton = findViewById(R.id.btnbackHome);
       imageButton.setOnClickListener(v -> {
-          Intent intent = new Intent(this, HomeFragment.class);
+          Intent intent = new Intent(this, Home.class);
              startActivity(intent);
        });
 

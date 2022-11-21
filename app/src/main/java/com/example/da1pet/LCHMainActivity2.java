@@ -10,7 +10,6 @@ import android.widget.ProgressBar;
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.Model.Categorys;
 import com.example.da1pet.Model.User;
-import com.example.da1pet.home.HomeFragment;
 
 public class LCHMainActivity2 extends AppCompatActivity {
     ProgressBar p;
@@ -44,7 +43,7 @@ public class LCHMainActivity2 extends AppCompatActivity {
                 if(db.userDAO().getAll().size() == 0){
                     db.userDAO().insert(new User("admin","Đinh Thành Huân","0799187604","123"));
                 }
-                Intent intent = new Intent(LCHMainActivity2.this, LoginActivity.class);
+                Intent intent = new Intent(LCHMainActivity2.this, NavigationActivity.class);
                 startActivity(intent);
                 try {
                     db.categoryDAO().insertTLoai(new Categorys(1+"","Vật nuôi"));
