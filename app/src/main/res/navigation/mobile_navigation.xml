@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_user" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.da1pet.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_TheLoai"
+        android:name="com.example.da1pet.Fragment.TheLoaiFragment"
+        android:label="Thể Loại"
+        tools:layout="@layout/fragment_the_loai" />
 </navigation>

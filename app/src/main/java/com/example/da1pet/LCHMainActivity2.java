@@ -45,13 +45,7 @@ public class LCHMainActivity2 extends AppCompatActivity {
                 }
                 Intent intent = new Intent(LCHMainActivity2.this, NavigationActivity.class);
                 startActivity(intent);
-                try {
-                    db.categoryDAO().insertTLoai(new Categorys(1+"","Vật nuôi"));
-                    db.categoryDAO().insertTLoai(new Categorys(2+"","Thức ăn"));
-                    db.categoryDAO().insertTLoai(new Categorys(3+"","Phụ kiện"));
-                }catch (Exception e){
-                    e.getMessage();
-                }
+                
             }
         }, 2000);
     }

@@ -52,7 +52,7 @@ public class ThemSanPham extends AppCompatActivity {
         ArrayList<String> listspn = new ArrayList<>();
         for (int i= 0;i<list.size();i++){
             Categorys categorys = list.get(i);
-            listspn.add(categorys.getName());
+            listspn.add(categorys.getTenLoai());
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,listspn);
          spinner = findViewById(R.id.spntheloai);

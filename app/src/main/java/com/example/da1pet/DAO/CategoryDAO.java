@@ -22,6 +22,10 @@ public interface CategoryDAO {
       void updateTLoai(Categorys categorys);
       @Delete
       void deleteTLoai(Categorys categorys);
+      @Query("select *from Categorys where Categorys.id_category = :maLoai limit 1")
+      Categorys getCategoryByCode(int maLoai);
+      @Query("select *from Categorys where Categorys.tenLoai = :tenLoai limit 1")
+      Categorys getCategoryByName(String tenLoai);
   }
 
 

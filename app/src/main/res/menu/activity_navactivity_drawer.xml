@@ -13,8 +13,8 @@
             android:icon="@drawable/ic_baseline_supervised_user_circle_24"
             android:title="User" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_TheLoai"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="Thể Loại" />
     </group>
 </menu>
