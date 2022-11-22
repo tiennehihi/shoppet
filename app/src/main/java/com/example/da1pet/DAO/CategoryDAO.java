@@ -22,6 +22,8 @@ public interface CategoryDAO {
       void updateTLoai(Categorys categorys);
       @Delete
       void deleteTLoai(Categorys categorys);
+      @Query("select * from categorys where id_category = :id")
+      List<Categorys> getItemById(String id);
   }
 
 
