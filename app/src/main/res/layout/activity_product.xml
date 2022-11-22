@@ -7,6 +7,121 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".ProductActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/teal_200"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnback"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@color/teal_200"
+            />
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/imageviewproduct"/>
+            <TableLayout
 
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TableRow android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:text="Tên sản phẩm"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:id="@+id/tvtensp"/>
+                </TableRow>
+                <TableRow android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:text="Loại sản phẩm"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:id="@+id/tvloaisp"/>
+                </TableRow>
+                <TableRow android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:text="Kho"/>
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text=""
+                        android:textSize="16dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:id="@+id/tvsoluongsanpham"/>
+                </TableRow>
+                <TableRow android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:text="Mô tả"/>
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        android:id="@+id/tvmotasanpham"/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="80dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Thêm vào giỏ hàng"
+            android:layout_weight="1"
+            android:background="#2196F3"
+            android:id="@+id/btnthemspgiohang"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#E12727"
+            android:text="Mua sản phẩm"/>
+    </LinearLayout>
 
 </LinearLayout>

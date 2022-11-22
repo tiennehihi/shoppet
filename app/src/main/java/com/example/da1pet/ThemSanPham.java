@@ -107,7 +107,7 @@ public class ThemSanPham extends AppCompatActivity {
                                     ,edtdescap.getText().toString()
                                     ,imginbyte));
                             Toast.makeText(this, "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(this,LaucherActivity.class);
+                            Intent intent = new Intent(this,NavigationActivity.class);
                             startActivity(intent);
                         }catch (Exception e){
                             Log.d(TAG, e.getMessage());

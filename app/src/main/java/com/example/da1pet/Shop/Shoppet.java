@@ -3,6 +3,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+
+import com.example.da1pet.NavigationActivity;
 import com.example.da1pet.R;
 import com.example.da1pet.home.Home;
 public class Shoppet extends AppCompatActivity {
@@ -16,7 +18,7 @@ public class Shoppet extends AppCompatActivity {
 
       imageButton = findViewById(R.id.btnbackHome);
       imageButton.setOnClickListener(v -> {
-          Intent intent = new Intent(this, Home.class);
+          Intent intent = new Intent(this, NavigationActivity.class);
              startActivity(intent);
        });
 
