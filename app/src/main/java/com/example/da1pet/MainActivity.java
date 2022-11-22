@@ -38,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                 startActivity(intent);
-                db.categoryDAO().insertTLoai(new Categorys(1+"","Vật nuôi"));
-                db.categoryDAO().insertTLoai(new Categorys(2+"","Thức ăn"));
-                db.categoryDAO().insertTLoai(new Categorys(3+"","Phụ kiện"));
+
             }
         }, 3000);
     }
