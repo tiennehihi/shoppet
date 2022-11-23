@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
-        android:backgroundTint="#F2F2F2">
+        android:backgroundTint="@color/teal_200">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center|start"
-                    android:text="Giá tiền:2 triệu"
+                    android:text="Giá tiền:2.000.000"
                     android:textSize="14dp" />
 
                 <TextView
@@ -68,6 +68,7 @@
                     android:textSize="14dp" />
 
                 <Button
+                    android:background="@drawable/khungtext"
                     android:id="@+id/btnXem"
                     android:layout_marginLeft="-30dp"
                     android:layout_marginTop="20dp"

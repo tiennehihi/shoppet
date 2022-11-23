@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.example.da1pet.Lienhe;
 import com.example.da1pet.LoginActivity;
 import com.example.da1pet.R;
+import com.example.da1pet.Shop.Shoppet;
 import com.example.da1pet.ThemSanPham;
 import com.example.da1pet.Thongbao;
 
@@ -46,5 +47,9 @@ public class UserFragment extends Fragment {
             Intent intent = new Intent(this.getActivity(), Thongbao.class);
             startActivity(intent);
         });
+//        view.findViewById(R.id.giohang).setOnClickListener(v -> {
+//            Intent intent = new Intent(this.getActivity(), Shoppet.class);
+//            startActivity(intent);
+//        });
     }
 }

@@ -13,14 +13,10 @@ public class Shoppet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppet);
-
-
-
       imageButton = findViewById(R.id.btnbackHome);
       imageButton.setOnClickListener(v -> {
           Intent intent = new Intent(this, NavigationActivity.class);
              startActivity(intent);
        });
-
     }
 }

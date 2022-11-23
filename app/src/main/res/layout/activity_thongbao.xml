@@ -25,6 +25,7 @@
                     android:layout_width="150dp"
                     android:layout_height="64dp"
                     android:layout_weight="1"
+                    android:background="@drawable/button"
                     app:srcCompat="@drawable/ic_thongbao_24" />
 
                 <LinearLayout
@@ -34,17 +35,20 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:textStyle="bold"
+                        android:background="@drawable/button"
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="29dp"
                         android:text="Giảm giá 10% các dịch vụ"
                         android:textColor="#F44336"
                         android:textSize="20sp" />
 
                     <TextView
+                        android:background="@drawable/button"
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="35.5dp"
                         android:text="Giảm 10% khi sử dụng dịch vụ chăm sóc thú cưng tại cửa hàng bắt đầu từ 15/11 tới 25/12" />
                 </LinearLayout>
             </LinearLayout>
