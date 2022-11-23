@@ -45,7 +45,7 @@ public class ProductActivity extends AppCompatActivity {
             Bitmap bitmap = BitmapFactory.decodeByteArray(products.getImg_product(),0,products.getImg_product().length);
             imageviewproduct.setImageBitmap(bitmap);
             tvtensp.setText(products.getName_products());
-            tvloaisp.setText(categorys.getName());
+            tvloaisp.setText(categorys.getTenLoai());
             tvsoluongsanpham.setText(String.valueOf(products.getInventory()));
             tvmotasanpham.setText(products.getDescribe());
         }catch (Exception e){
