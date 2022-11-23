@@ -29,7 +29,7 @@ public interface CategoryDAO {
       Categorys getCategoryByName(String tenLoai);
 
       @Query("select * from categorys where id_category = :id")
-      List<Categorys> getItemById(String id);
+      List<Categorys> getItemById(int id);
 
   }
 

@@ -13,7 +13,6 @@ public class Categorys {
     }
 
     public Categorys(String tenLoai) {
-        this.id_category = id_category;
         this.tenLoai = tenLoai;
     }
 

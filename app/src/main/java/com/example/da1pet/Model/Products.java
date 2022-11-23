@@ -13,10 +13,9 @@ import java.sql.Blob;
 @Entity(foreignKeys = {
         @ForeignKey(entity = Categorys.class, parentColumns = "id_category", childColumns = "id_category", onDelete = ForeignKey.CASCADE)})
 public class Products {
-    @PrimaryKey
-    @NonNull
-    private String id_products;
-    private String id_category;
+    @PrimaryKey(autoGenerate = true)
+    private Integer id_products;
+    private Integer id_category;
     private Integer inventory;
     private String name_products;
     private Integer price;
@@ -24,8 +23,7 @@ public class Products {
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
     private byte[] img_product;
 
-    public Products(@NonNull String id_products, String id_category, Integer inventory, String name_products, Integer price, String describe, byte[] img_product) {
-        this.id_products = id_products;
+    public Products(Integer id_category, Integer inventory, String name_products, Integer price, String describe, byte[] img_product) {
         this.id_category = id_category;
         this.inventory = inventory;
         this.name_products = name_products;
@@ -62,20 +60,19 @@ public class Products {
     }
 
 
-
-    public String getId_products() {
+    public Integer getId_products() {
         return id_products;
     }
 
-    public void setId_products(String id_products) {
+    public void setId_products(Integer id_products) {
         this.id_products = id_products;
     }
 
-    public String getId_category() {
+    public Integer getId_category() {
         return id_category;
     }
 
-    public void setId_category(String id_category) {
+    public void setId_category(Integer id_category) {
         this.id_category = id_category;
     }
 

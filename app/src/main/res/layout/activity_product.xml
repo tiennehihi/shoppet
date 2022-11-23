@@ -121,6 +121,7 @@
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="#E12727"
+            android:id="@+id/btnbuypr"
             android:text="Mua sản phẩm"/>
     </LinearLayout>
 

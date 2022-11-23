@@ -21,5 +21,5 @@ public interface ProductsDAO {
     @Delete
     void delete(Products products);
     @Query("select * from Products WHERE id_products = :id")
-    List<Products> getItemById (String id);
+    List<Products> getItemById (int id);
 }

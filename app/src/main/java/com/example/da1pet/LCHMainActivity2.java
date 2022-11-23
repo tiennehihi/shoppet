@@ -44,6 +44,7 @@ public class LCHMainActivity2 extends AppCompatActivity {
                     db.userDAO().insert(new User("admin","Đinh Thành Huân","0799187604","123"));
                 }
                 Intent intent = new Intent(LCHMainActivity2.this, NavigationActivity.class);
+                intent.putExtra("username","");
                 startActivity(intent);
                 
             }

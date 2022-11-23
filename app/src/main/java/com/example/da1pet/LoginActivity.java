@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.Model.User;
+
 import com.example.da1pet.databinding.ActivityLoginBinding;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -38,8 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.chkRememberPass.setChecked(preferences.getBoolean("REMEMBER",false));
 
         findViewById(R.id.btnback).setOnClickListener(v -> {
-            Intent intent = new Intent(this,LaucherActivity.class);
-            startActivity(intent);
+            onBackPressed();
         });
 
 
@@ -103,8 +103,8 @@ public class LoginActivity extends AppCompatActivity {
                     //remember
                     rememberUser(username,password,binding.chkRememberPass.isChecked());
                     //Start intent
-                    Intent intent =new Intent(LoginActivity.this,LaucherActivity.class);
-                    intent.putExtra("User", String.valueOf(user));
+                    Intent intent =new Intent(LoginActivity.this,NavigationActivity.class);
+                    intent.putExtra("username", String.valueOf(user));
                     startActivity(intent);
                 }else {
                     Toast.makeText(LoginActivity.this, "DANG NHAP THAT BAI", Toast.LENGTH_SHORT).show();

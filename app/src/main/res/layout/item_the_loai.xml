@@ -13,11 +13,14 @@
         app:cardCornerRadius="20dp"
         android:backgroundTint="#F2F2F2">
         <LinearLayout
+            android:backgroundTint="@color/teal_200"
+            android:background="@drawable/khungtext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
+                android:background="@drawable/khungtext"
                 android:id="@+id/imageView6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"

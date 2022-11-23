@@ -36,15 +36,18 @@ public class ThemSanPham extends AppCompatActivity {
     ImageView img;
     DbRoom db;
     Spinner spinner;
-    EditText edtid,edtname,edtinventory,edtprice,edtdescap;
+    EditText edtname,edtinventory,edtprice,edtdescap;
     String TAG = "zzzzzzz";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_san_pham);
         db = DbRoom.getInstance(this);
+        db.categoryDAO().insertTLoai(new Categorys("Vật nuôi"));
+        db.categoryDAO().insertTLoai(new Categorys("Thức ăn"));
+        db.categoryDAO().insertTLoai(new Categorys("Phụ kiện"));
 
-        edtid = findViewById(R.id.edt_id);
+
         edtname = findViewById(R.id.edt_tensp);
         edtinventory = findViewById(R.id.edt_inventory);
         ArrayList<Categorys> list = new ArrayList<>();
@@ -71,7 +74,7 @@ public class ThemSanPham extends AppCompatActivity {
         });
 
             findViewById(R.id.btnthemsanpham).setOnClickListener(v -> {
-                if (edtid.getText().toString() == ""|| edtname.getText().toString() == ""|| edtinventory.getText().toString() == ""|| edtprice.getText().toString() == ""|| edtdescap.getText().toString() == ""){
+                if ( edtname.getText().toString() == ""|| edtinventory.getText().toString() == ""|| edtprice.getText().toString() == ""|| edtdescap.getText().toString() == ""){
                     Toast.makeText(this, "Không được để trống trường nào", Toast.LENGTH_LONG).show();
                 }else {
                     Toast.makeText(this, "Hãy chọn ảnh sản phẩm", Toast.LENGTH_LONG).show();
@@ -95,17 +98,17 @@ public class ThemSanPham extends AppCompatActivity {
                 imgproduct.compress(Bitmap.CompressFormat.JPEG,100,outputStream);
                 imginbyte = outputStream.toByteArray();
                 findViewById(R.id.btnthemsanpham).setOnClickListener(v -> {
-                    if (edtid.getText().toString() == ""|| edtname.getText().toString() == ""|| edtinventory.getText().toString() == ""||  edtprice.getText().toString() == ""|| edtdescap.getText().toString() == ""){
+                    if (edtname.getText().toString() == ""|| edtinventory.getText().toString() == ""||  edtprice.getText().toString() == ""|| edtdescap.getText().toString() == ""){
                         Toast.makeText(this, "Không được để trống trường nào", Toast.LENGTH_LONG).show();
                     }else {
                         try {
-                            db.productsDAO().insert(new Products(edtid.getText().toString()
-                                    ,String.valueOf(spinner.getSelectedItemPosition()+1)
-                                    ,Integer.parseInt(edtinventory.getText().toString())
-                                    ,edtname.getText().toString()
-                                    ,Integer.parseInt(edtprice.getText().toString())
-                                    ,edtdescap.getText().toString()
-                                    ,imginbyte));
+                            db.productsDAO().insert(new Products(spinner.getSelectedItemPosition()+1
+                                            ,Integer.parseInt(edtinventory.getText().toString())
+                                            ,edtname.getText().toString()
+                                            ,Integer.parseInt(edtprice.getText().toString())
+                                            ,edtdescap.getText().toString()
+                                            ,imginbyte)
+                                    );
                             Toast.makeText(this, "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(this,NavigationActivity.class);
                             startActivity(intent);
