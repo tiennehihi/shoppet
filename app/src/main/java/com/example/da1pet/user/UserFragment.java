@@ -31,10 +31,6 @@ public class UserFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.btnlogin).setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), LoginActivity.class);
-            startActivity(intent);
-        });
         view.findViewById(R.id.tvthemsp).setOnClickListener(v -> {
             Intent intent = new Intent(this.getActivity(), ThemSanPham.class);
             startActivity(intent);
@@ -47,9 +43,9 @@ public class UserFragment extends Fragment {
             Intent intent = new Intent(this.getActivity(), Thongbao.class);
             startActivity(intent);
         });
-//        view.findViewById(R.id.giohang).setOnClickListener(v -> {
-//            Intent intent = new Intent(this.getActivity(), Shoppet.class);
-//            startActivity(intent);
-//        });
+        view.findViewById(R.id.giohang).setOnClickListener(v -> {
+            Intent intent = new Intent(this.getActivity(), Shoppet.class);
+            startActivity(intent);
+        });
     }
 }

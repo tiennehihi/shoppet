@@ -64,18 +64,6 @@
                     android:gravity="right"
                     android:orientation="horizontal">
 
-                    <Button
-
-                        android:id="@+id/btnlogin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/khungtext"
-                        android:text="Đăng nhập"
-                        android:textColor="@color/black"
-                        android:layout_marginRight="5dp"/>
-
-
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

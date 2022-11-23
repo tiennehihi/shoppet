@@ -43,6 +43,9 @@ public class ThemSanPham extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_san_pham);
         db = DbRoom.getInstance(this);
+        db.categoryDAO().insertTLoai(new Categorys("Vật nuôi"));
+        db.categoryDAO().insertTLoai(new Categorys("Thức ăn"));
+        db.categoryDAO().insertTLoai(new Categorys("Phụ kiện"));
 
         edtid = findViewById(R.id.edt_id);
         edtname = findViewById(R.id.edt_tensp);
