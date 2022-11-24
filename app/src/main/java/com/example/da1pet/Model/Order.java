@@ -1,6 +1,5 @@
 package com.example.da1pet.Model;
 
-import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
@@ -19,17 +18,18 @@ public class Order {
     private String id_user;
     private Integer total;
     @TypeConverters({Dateconverter.class})
-    private Date date;
+    private String date;
+    private Integer thanhToan;
 
-    public Order(String id_user, Integer total, Date date) {
+    public Order(String username, int i, Date currentTime) {
+    }
+
+    public Order() {
+        this.id_order = id_order;
         this.id_user = id_user;
         this.total = total;
         this.date = date;
-    }
-
-
-
-    public Order() {
+        this.thanhToan = thanhToan;
     }
 
     public Integer getId_order() {
@@ -48,20 +48,28 @@ public class Order {
         this.id_user = id_user;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     public Integer getTotal() {
         return total;
     }
 
     public void setTotal(Integer total) {
         this.total = total;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Integer getThanhToan() {
+        return thanhToan;
+    }
+
+    public void setThanhToan(Integer thanhToan) {
+        this.thanhToan = thanhToan;
     }
 }
 

@@ -23,7 +23,9 @@ public interface UserDAO {
     List<User> getAll();
     @Query("select *from User where id_user = :username and password= :password limit 1")
     User checkLgin(String username, String password);
-    @Query("select *from User where id_user = :username limit 1")
-    User getUser(String username);
+    @Query("select *from User where User.name = :name limit 1")
+    User getUserByname(String name);
+    @Query("select *from User where User.id_user = :id limit 1")
+    User getUserByCode(int id);
 
 }

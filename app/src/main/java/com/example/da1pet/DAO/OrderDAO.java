@@ -17,13 +17,15 @@ public interface OrderDAO {
     List<Order> getAll();
 
     @Insert
-    void insertTLoai(Order order);
+    void insert(Order order);
 
     @Update
-    void updateTLoai(Order order);
+    void update(Order order);
 
     @Delete
-    void deleteTLoai(Order order);
+    void delete(Order order);
+    @Query("select id_order from `order` as hd where hd.id_order = :id_order and hd.id_user = :id_user order by id_order desc limit 1")
+    int getCode(int id_order, String id_user);
 
     @Query("select * from `Order` where id_user = :iduser")
     List<Order> getAllByUser(String iduser);

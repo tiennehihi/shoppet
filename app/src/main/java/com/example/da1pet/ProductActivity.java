@@ -113,7 +113,7 @@ public class ProductActivity extends AppCompatActivity {
                     Date currentTime = Calendar.getInstance().getTime();
                     view.findViewById(R.id.btnthanhtoan).setOnClickListener(v1 -> {
 
-                           db.orderDAO().insertTLoai(
+                           db.orderDAO().insert(
                                    new Order(bundle.getString("username")
                                            ,Integer.parseInt(tvtongtien.getText().toString())
                                            ,currentTime));

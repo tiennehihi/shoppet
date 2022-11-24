@@ -22,4 +22,14 @@
         android:name="com.example.da1pet.Fragment.TheLoaiFragment"
         android:label="Thể Loại"
         tools:layout="@layout/fragment_the_loai" />
+    <fragment
+        android:id="@+id/nav_Khachhang"
+        android:name="com.example.da1pet.Fragment.UsersFragment"
+        android:label="Khách hàng"
+        tools:layout="@layout/fragment_users" />
+    <fragment
+        android:id="@+id/nav_order"
+        android:name="com.example.da1pet.Fragment.OrderFragment"
+        android:label="Hóa đơn"
+        tools:layout="@layout/fragment_order" />
 </navigation>

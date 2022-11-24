@@ -14,6 +14,10 @@ public class User {
     private String number;
     private String password;
 
+
+    public User(String name) {
+        this.name = name;
+    }
     public User(@NonNull String id_user, String name, String number, String password) {
         this.id_user = id_user;
         this.name = name;

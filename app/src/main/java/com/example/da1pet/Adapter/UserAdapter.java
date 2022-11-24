@@ -8,45 +8,42 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.da1pet.DbRoom.DbRoom;
-import com.example.da1pet.Model.Categorys;
+import com.example.da1pet.Model.User;
 import com.example.da1pet.R;
 
 import java.util.List;
 
-public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHolder> {
-    List<Categorys> list;
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
+    List<User> list;
     Context context;
     DbRoom db;
-    public TheLoaiAdapter(Context context,List<Categorys> list) {
+    public UserAdapter(Context context, List<User> list) {
         this.list = list;
         this.context = context;
         this.db = DbRoom.getInstance(context);
     }
 
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_the_loai,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_user,parent,false);
         return new ViewHolder(view);
     }
 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Categorys categorys = list.get(position);
+        User user = list.get(position);
         final int index = position;
-        holder.tvTenLoai.setText(list.get(position).getTenLoai());
-        holder.tvMaLoai.setText("Mã loại: "+list.get(position).getId_category());
+        holder.tvName.setText(list.get(position).getName());
+        holder.tvID.setText("ID: "+list.get(position).getId_user());
+        holder.tvNumber.setText(list.get(position).getNumber());
         holder.imgDelete.setOnClickListener(view -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle("Cảnh báo");
@@ -55,7 +52,7 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHold
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     try{
-                        db.categoryDAO().deleteTLoai(categorys);
+                        db.userDAO().delete(user);
                         list.remove(index);
                         notifyItemRemoved(index);
                         notifyItemRangeChanged(index,getItemCount());
@@ -77,14 +74,16 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHold
         });
 
         holder.itemView.setOnClickListener(view -> {
-            View viewUpdate = LayoutInflater.from(context).inflate(R.layout.dialog_update_the_loai,null );
-            TextView tvMaLoai = viewUpdate.findViewById(R.id.tvMaLoai);
-            EditText edTenLoai = viewUpdate.findViewById(R.id.edTenLoai);
-            Button btnUpdate = viewUpdate.findViewById(R.id.btnSaveLS);
-            Button btnCancel = viewUpdate.findViewById(R.id.btnCancelLS);
+            View viewUpdate = LayoutInflater.from(context).inflate(R.layout.dialog_update_users,null );
+            TextView tvIdUser = viewUpdate.findViewById(R.id.tvId);
+            EditText ed_Name = viewUpdate.findViewById(R.id.ed_Name);
+            EditText ed_Number = viewUpdate.findViewById(R.id.ed_Number);
+            Button btnUpdate = viewUpdate.findViewById(R.id.btnSave);
+            Button btnCancel = viewUpdate.findViewById(R.id.btnCancel);
             //Fill table
-            tvMaLoai.setText("Mã loại: "+categorys.getId_category());
-            edTenLoai.setText(categorys.getTenLoai());
+            tvIdUser.setText("ID: "+user.getId_user());
+            ed_Name.setText(user.getName());
+            ed_Number.setText(user.getNumber());
             //Dialog
             AlertDialog alertDialog;
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -94,16 +93,15 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHold
             btnCancel.setOnClickListener(view1 -> {
                 alertDialog.dismiss();
             });
-
             btnUpdate.setOnClickListener(view1 -> {
-                if(edTenLoai.getText().toString().isEmpty()){
+                if(ed_Name.getText().toString().isEmpty()){
                     Toast.makeText(context, "Vui lòng không để trống!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                categorys.setTenLoai(edTenLoai.getText().toString());
+                user.setName(ed_Name.getText().toString());
                 try{
-                    db.categoryDAO().updateTLoai(categorys);
-                    list.set(position,categorys);
+                    db.userDAO().update(user);
+                    list.set(position,user);
                     this.notifyItemChanged(position);
                     Toast.makeText(context, "Cập nhật thành công!", Toast.LENGTH_SHORT).show();
                     alertDialog.dismiss();
@@ -121,14 +119,15 @@ public class TheLoaiAdapter extends RecyclerView.Adapter<TheLoaiAdapter.ViewHold
         return list.size();
     }
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tvMaLoai, tvTenLoai;
+        TextView tvName,tvID,tvNumber;
         ImageView imgDelete;
 
         public ViewHolder( View itemView) {
             super(itemView);
             this.imgDelete = itemView.findViewById(R.id.imgDelete);
-            this.tvMaLoai = itemView.findViewById(R.id.tvMaLoai);
-            this.tvTenLoai = itemView.findViewById(R.id.tvTenLoai);
+            this.tvName = itemView.findViewById(R.id.tvName);
+            this.tvID = itemView.findViewById(R.id.tvIdUser);
+            this.tvNumber = itemView.findViewById(R.id.tvNumber);
         }
     }
 
