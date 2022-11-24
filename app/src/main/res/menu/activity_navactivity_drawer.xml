@@ -21,5 +21,13 @@
             android:id="@+id/nav_TheLoai"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Thể Loại" />
+        <item
+            android:id="@+id/nav_Khachhang"
+            android:icon="@drawable/ic_baseline_supervised_user_circle_24"
+            android:title="Khách Hàng" />
+        <item
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Hóa đơn" />
     </group>
 </menu>
