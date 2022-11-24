@@ -32,6 +32,16 @@ public class Products {
         this.img_product = img_product;
     }
 
+    public Products(Integer id_products, Integer id_category, Integer inventory, String name_products, Integer price, String describe, byte[] img_product) {
+        this.id_products = id_products;
+        this.id_category = id_category;
+        this.inventory = inventory;
+        this.name_products = name_products;
+        this.price = price;
+        this.describe = describe;
+        this.img_product = img_product;
+    }
+
     public Products() {
     }
 

@@ -120,10 +120,25 @@ public class ProductActivity extends AppCompatActivity {
                            db.orderDetailDAO().insert(
                                    new Order_detail(db.orderDAO().getAll().size()-1,bundle.getInt("idsanpham")
                                            ,Integer.parseInt(tvsoluong.getText().toString())));
-                           db.productsDAO().update(new Products(products.getId_products(),products.getInventory()-Integer.parseInt(tvsoluong.getText().toString()),products.getName_products(),products.getPrice(),products.getDescribe(),products.getImg_product()));
+                           db.productsDAO().update(new Products(products.getId_products(),products.getId_category(),products.getInventory()-Integer.parseInt(tvsoluong.getText().toString()),products.getName_products(),products.getPrice(),products.getDescribe(),products.getImg_product()));
                            alertDialog.dismiss();
                         Toast.makeText(this, "Mua thành công", Toast.LENGTH_SHORT).show();
+                        try {
+                            Bundle bundle1 = getIntent().getExtras();
+                            list = db.productsDAO().getItemById(bundle1.getInt("idsanpham"));
+                            Products products1 = list.get(0);
+                            categorysList = db.categoryDAO().getItemById(products1.getId_category());
+                            Categorys categorys1 = categorysList.get(0);
 
+                            Bitmap bitmap1 = BitmapFactory.decodeByteArray(products1.getImg_product(), 0, products1.getImg_product().length);
+                            imageviewproduct.setImageBitmap(bitmap1);
+                            tvtensp.setText(products1.getName_products());
+                            tvloaisp.setText(categorys1.getTenLoai());
+                            tvsoluongsanpham.setText(String.valueOf(products1.getInventory()));
+                            tvmotasanpham.setText(products1.getDescribe());
+                        }catch (Exception e){
+                            e.getMessage();
+                        }
                     });
                 }
 
