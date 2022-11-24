@@ -13,16 +13,21 @@ import java.util.List;
 
 @Dao
 public interface OrderDAO {
-        @Query("select * from `Order`")
-        List<Order> getAll();
-        @Insert
-        void insertTLoai(Order order);
-        @Update
-        void updateTLoai(Order order);
-        @Delete
-        void deleteTLoai(Order order);
+    @Query("select * from `Order`")
+    List<Order> getAll();
 
-    }
+    @Insert
+    void insertTLoai(Order order);
+
+    @Update
+    void updateTLoai(Order order);
+
+    @Delete
+    void deleteTLoai(Order order);
+
+    @Query("select * from `Order` where id_user = :iduser")
+    List<Order> getAllByUser(String iduser);
+}
 
 
 

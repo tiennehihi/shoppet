@@ -43,9 +43,11 @@ public class ThemSanPham extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_san_pham);
         db = DbRoom.getInstance(this);
-        db.categoryDAO().insertTLoai(new Categorys("Vật nuôi"));
-        db.categoryDAO().insertTLoai(new Categorys("Thức ăn"));
-        db.categoryDAO().insertTLoai(new Categorys("Phụ kiện"));
+        if (db.categoryDAO().getAll().size()==0){
+            db.categoryDAO().insertTLoai(new Categorys("Vật nuôi"));
+            db.categoryDAO().insertTLoai(new Categorys("Thức ăn"));
+            db.categoryDAO().insertTLoai(new Categorys("Phụ kiện"));
+        }
 
 
         edtname = findViewById(R.id.edt_tensp);
@@ -111,6 +113,8 @@ public class ThemSanPham extends AppCompatActivity {
                                     );
                             Toast.makeText(this, "Thêm sản phẩm thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(this,NavigationActivity.class);
+                            intent.putExtra("username",getIntent().getStringExtra("username"));
+                            startActivity(intent);
                             startActivity(intent);
                         }catch (Exception e){
                             Log.d(TAG, e.getMessage());

@@ -20,4 +20,6 @@ public interface OrderDetailDAO {
     void update(Order_detail order_detail);
     @Delete
     void delete(Order_detail order_detail);
+    @Query("select * from order_detail where id_order = :id")
+    List<Order_detail> getCount(Integer id);
 }

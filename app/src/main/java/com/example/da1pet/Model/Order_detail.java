@@ -13,43 +13,48 @@ import androidx.room.PrimaryKey;
 })
 
 public class Order_detail {
-    @PrimaryKey
-    @NonNull
-    private String id_order;
-    private String quantity;
-    private String id_products;
+    @PrimaryKey(autoGenerate = true)
+    private Integer id_order_detail;
+    private Integer id_order;
+    private Integer id_products;
+    private Integer quantity;
 
-    public Order_detail() {
-    }
 
-    public Order_detail(String id_order, String quantity, String id_products) {
+    public Order_detail(Integer id_order, Integer id_products, Integer quantity) {
         this.id_order = id_order;
-        this.quantity = quantity;
         this.id_products = id_products;
+        this.quantity = quantity;
     }
 
-    public String getId_order() {
+    public Integer getId_order_detail() {
+        return id_order_detail;
+    }
+
+    public void setId_order_detail(Integer id_order_detail) {
+        this.id_order_detail = id_order_detail;
+    }
+
+    public Integer getId_order() {
         return id_order;
     }
 
-    public void setId_order(String id_order) {
+    public void setId_order(Integer id_order) {
         this.id_order = id_order;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public String getId_products() {
+    public Integer getId_products() {
         return id_products;
     }
 
-    public void setId_products(String id_products) {
+    public void setId_products(Integer id_products) {
         this.id_products = id_products;
     }
-
 }

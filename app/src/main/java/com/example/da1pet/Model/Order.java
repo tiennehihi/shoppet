@@ -4,32 +4,39 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.example.da1pet.Dateconverter;
+
+import java.util.Date;
 
 
-@Entity(foreignKeys = {@ForeignKey(entity = User.class, parentColumns = "id_user", childColumns = "id_user", onDelete = ForeignKey.CASCADE)})
+@Entity(foreignKeys = {
+        @ForeignKey(entity = User.class, parentColumns = "id_user", childColumns = "id_user", onDelete = ForeignKey.CASCADE)})
 public class Order {
-    @PrimaryKey
-    @NonNull
-    private String id_order;
+    @PrimaryKey(autoGenerate = true)
+    private Integer id_order;
     private String id_user;
-    private String status;
-    private String total;
+    private Integer total;
+    @TypeConverters({Dateconverter.class})
+    private Date date;
 
-    public Order(String id_order, String id_user, String status, String total) {
-        this.id_order = id_order;
+    public Order(String id_user, Integer total, Date date) {
         this.id_user = id_user;
-        this.status = status;
         this.total = total;
+        this.date = date;
     }
+
+
 
     public Order() {
     }
 
-    public String getId_order() {
+    public Integer getId_order() {
         return id_order;
     }
 
-    public void setId_order(String id_order) {
+    public void setId_order(Integer id_order) {
         this.id_order = id_order;
     }
 
@@ -41,19 +48,20 @@ public class Order {
         this.id_user = id_user;
     }
 
-    public String getStatus() {
-        return status;
+    public Date getDate() {
+        return date;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getTotal() {
+    public Integer getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(Integer total) {
         this.total = total;
     }
 }
+

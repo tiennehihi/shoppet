@@ -92,6 +92,7 @@ public class Home extends Fragment {
                 convertView.setOnClickListener(v -> {
                     Intent intent = new Intent(Home.this.getActivity(), ProductActivity.class);
                     intent.putExtra("idsanpham",products.getId_products());
+                    intent.putExtra("username",getActivity().getIntent().getStringExtra("username"));
                     startActivity(intent);
                 });
             }catch (Exception e){

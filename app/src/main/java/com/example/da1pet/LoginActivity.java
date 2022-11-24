@@ -104,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                     rememberUser(username,password,binding.chkRememberPass.isChecked());
                     //Start intent
                     Intent intent =new Intent(LoginActivity.this,NavigationActivity.class);
-                    intent.putExtra("username", String.valueOf(user));
+                    intent.putExtra("username", user.getId_user());
                     startActivity(intent);
                 }else {
                     Toast.makeText(LoginActivity.this, "DANG NHAP THAT BAI", Toast.LENGTH_SHORT).show();
