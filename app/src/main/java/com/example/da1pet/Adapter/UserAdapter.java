@@ -121,7 +121,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView tvName,tvID,tvNumber;
         ImageView imgDelete;
-
+//
         public ViewHolder( View itemView) {
             super(itemView);
             this.imgDelete = itemView.findViewById(R.id.imgDelete);
