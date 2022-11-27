@@ -17,15 +17,14 @@ public class Order {
     private Integer id_order;
     private String id_user;
     private Integer total;
-    @TypeConverters({Dateconverter.class})
     private String date;
     private Integer thanhToan;
 
-    public Order(String username, int i, Date currentTime) {
+    public Order() {
     }
 
-    public Order() {
-        this.id_order = id_order;
+    public Order( String id_user, Integer total, String date, Integer thanhToan) {
+
         this.id_user = id_user;
         this.total = total;
         this.date = date;

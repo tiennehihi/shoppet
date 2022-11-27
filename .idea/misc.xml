@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable-v24/ic_books.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable/home_slideshow.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_hoa_don.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_hoa_don_chi_tiet.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_laucher.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_lchmain2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_login.xml" value="0.264" />
@@ -26,8 +27,11 @@
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/gridthanhtoan.xml" value="0.253125" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/nav_header_navigation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/progrid.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/roworder.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/roworderdetail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/menu/activity_navactivity_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/ic_lhe24.xml" value="0.1385" />

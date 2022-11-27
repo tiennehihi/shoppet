@@ -24,9 +24,12 @@ import com.example.da1pet.Model.Order;
 import com.example.da1pet.Model.Order_detail;
 import com.example.da1pet.Model.Products;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductActivity extends AppCompatActivity {
     DbRoom db;
@@ -35,6 +38,7 @@ public class ProductActivity extends AppCompatActivity {
     AlertDialog alertDialog;
     List<Categorys> categorysList;
     ImageView imageviewproduct;
+    ArrayList<Order> listorder;
     TextView tvtensp,tvloaisp,tvsoluongsanpham,tvmotasanpham,tvtongtien;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,16 +114,23 @@ public class ProductActivity extends AppCompatActivity {
                         }
 
                     });
-                    Date currentTime = Calendar.getInstance().getTime();
+//                    Date currentTime = Calendar.getInstance().getTime();
+                    String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                     view.findViewById(R.id.btnthanhtoan).setOnClickListener(v1 -> {
 
-                           db.orderDAO().insert(
-                                   new Order(bundle.getString("username")
-                                           ,Integer.parseInt(tvtongtien.getText().toString())
-                                           ,currentTime));
-                           db.orderDetailDAO().insert(
-                                   new Order_detail(db.orderDAO().getAll().size()-1,bundle.getInt("idsanpham")
-                                           ,Integer.parseInt(tvsoluong.getText().toString())));
+                           try {
+                               db.orderDAO().insert(
+                                       new Order(bundle.getString("username")
+                                               ,Integer.parseInt(tvtongtien.getText().toString()),
+                                               currentDate,Integer.parseInt(tvtongtien.getText().toString())));
+                               listorder = (ArrayList<Order>) db.orderDAO().getAll();
+                               Order order = listorder.get(listorder.size()-1);
+                               db.orderDetailDAO().insert(
+                                       new Order_detail(order.getId_order(),bundle.getInt("idsanpham")
+                                               ,Integer.parseInt(tvsoluong.getText().toString())));
+                           }catch (Exception e){
+                               Log.e(TAG, "onCreate: "+e.getMessage());
+                           }
                            db.productsDAO().update(new Products(products.getId_products(),products.getId_category(),products.getInventory()-Integer.parseInt(tvsoluong.getText().toString()),products.getName_products(),products.getPrice(),products.getDescribe(),products.getImg_product()));
                            alertDialog.dismiss();
                         Toast.makeText(this, "Mua thành công", Toast.LENGTH_SHORT).show();
