@@ -35,6 +35,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:gravity="center"
                         android:textStyle="bold"
                         android:background="@drawable/button"
                         android:id="@+id/textView2"
@@ -45,6 +46,7 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:gravity="center"
                         android:background="@drawable/button"
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"

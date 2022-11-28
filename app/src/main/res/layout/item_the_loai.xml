@@ -20,6 +20,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:backgroundTint="#EA99B5"
                 android:background="@drawable/khungtext"
                 android:id="@+id/imageView6"
                 android:layout_width="100dp"

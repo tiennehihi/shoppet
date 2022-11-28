@@ -20,6 +20,8 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:backgroundTint="#EA99B5"
+                android:background="@drawable/khungtext"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="10dp"
@@ -70,6 +72,7 @@
                 <Button
                     android:background="@drawable/khungtext"
                     android:id="@+id/btnXem"
+                    android:textStyle="bold"
                     android:layout_marginLeft="-30dp"
                     android:layout_marginTop="20dp"
                     android:layout_width="130dp"
