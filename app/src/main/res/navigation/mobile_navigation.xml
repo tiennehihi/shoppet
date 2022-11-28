@@ -17,11 +17,7 @@
         android:label="User"
         tools:layout="@layout/fragment_user" />
 
-    <fragment
-        android:id="@+id/nav_TheLoai"
-        android:name="com.example.da1pet.Fragment.TheLoaiFragment"
-        android:label="Thể Loại"
-        tools:layout="@layout/fragment_the_loai" />
+
     <fragment
         android:id="@+id/nav_Khachhang"
         android:name="com.example.da1pet.Fragment.UsersFragment"
@@ -32,4 +28,9 @@
         android:name="com.example.da1pet.Fragment.OrderFragment"
         android:label="Hóa đơn"
         tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/nav_pass"
+        android:name="com.example.da1pet.Fragment.ChangePasswordFragment"
+        android:label="Hóa đơn"
+        tools:layout="@layout/fragment_change_password" />
 </navigation>

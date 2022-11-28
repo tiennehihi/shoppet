@@ -29,5 +29,9 @@
             android:id="@+id/nav_order"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Hóa đơn" />
+        <item
+            android:id="@+id/nav_pass"
+            android:icon="@drawable/ic_key"
+            android:title="Đổi mật khẩu" />
     </group>
 </menu>
