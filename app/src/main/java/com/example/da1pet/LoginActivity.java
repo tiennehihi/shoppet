@@ -2,27 +2,35 @@ package com.example.da1pet;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.Model.Cart;
+import com.example.da1pet.Model.Products;
 import com.example.da1pet.Model.User;
 
 import com.example.da1pet.databinding.ActivityLoginBinding;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.List;
+
 
 public class LoginActivity extends AppCompatActivity {
+    List<Products> lsProduct;
 
     AlertDialog alertDialog;
     ActivityLoginBinding binding;
@@ -119,6 +127,17 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+    //SEARCH
+//    public boolean onCreateOptionsMenu(Menu menu){
+//        getMenuInflater().inflate(R.menu.activity_navactivity_drawer,menu);
+//        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+//
+//
+//    }
+
+
+
 
     private boolean checkValidate(String idUser, String name, String phone, String password) {
         return !(idUser.isEmpty() || name.isEmpty() || phone.isEmpty() || password.isEmpty());

@@ -33,5 +33,11 @@
             android:id="@+id/nav_pass"
             android:icon="@drawable/ic_key"
             android:title="Đổi mật khẩu" />
+        <item
+            android:id="@+id/action_search"
+            android:orderInCategory="200"
+            android:title="Search"
+            android:icon="@drawable/ic_baseline_search_24"
+            />
     </group>
 </menu>

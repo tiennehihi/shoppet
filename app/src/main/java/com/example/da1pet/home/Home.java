@@ -47,17 +47,17 @@ public class Home extends Fragment {
         AnimationDrawable animationDrawable = (AnimationDrawable) slideshow.getBackground();
         animationDrawable.start();
         ImageButton btn = view.findViewById(R.id.btnshop);
-        btn.setOnClickListener(v -> {
-            if (getActivity().getIntent().getStringExtra("username").equals("")){
-                Intent intent = new Intent(this.getActivity(), LoginActivity.class);
-                startActivity(intent);
-            }else {
-                Intent intent = new Intent(this.getActivity(), Shoppet.class);
-                intent.putExtra("idcart",getActivity().getIntent().getStringExtra("username"));
-                startActivity(intent);
-            }
-
-        });
+//        btn.setOnClickListener(v -> {
+//            if (getActivity().getIntent().getStringExtra("username").equals("")){
+//                Intent intent = new Intent(this.getActivity(), LoginActivity.class);
+//                startActivity(intent);
+//            }else {
+//                Intent intent = new Intent(this.getActivity(), Shoppet.class);
+//                intent.putExtra("idcart",getActivity().getIntent().getStringExtra("username"));
+//                startActivity(intent);
+//            }
+//
+//        });
         NonScrollGridView gridView = view.findViewById(R.id.lv);
         gridView.setNumColumns(2);
         gridView.setAdapter(new GrAdapter(list));
