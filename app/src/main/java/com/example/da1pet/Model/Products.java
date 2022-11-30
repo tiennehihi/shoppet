@@ -11,7 +11,8 @@ import androidx.room.PrimaryKey;
 import java.sql.Blob;
 
 @Entity(foreignKeys = {
-        @ForeignKey(entity = Categorys.class, parentColumns = "id_category", childColumns = "id_category", onDelete = ForeignKey.CASCADE)})
+        @ForeignKey(entity = Categorys.class, parentColumns = "id_category", childColumns = "id_category", onDelete = ForeignKey.CASCADE)
+})
 public class Products {
     @PrimaryKey(autoGenerate = true)
     private Integer id_products;

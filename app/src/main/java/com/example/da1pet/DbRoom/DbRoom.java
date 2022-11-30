@@ -24,7 +24,7 @@ import com.example.da1pet.Model.Products;
 
 @Database(entities = {Categorys.class, Order.class, Products.class, Order_detail.class, User.class, Cart.class, Cart_item.class}, exportSchema = false , version = 2)
 public abstract class DbRoom extends RoomDatabase {
-    private static final String DB_NAME = "DA1";
+    private static final String DB_NAME = "DA1.db";
     private static DbRoom instance;
     public static synchronized DbRoom getInstance(Context context){
         if(instance==null){

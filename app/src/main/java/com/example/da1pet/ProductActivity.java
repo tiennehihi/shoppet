@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.Model.Cart_item;
 import com.example.da1pet.Model.Categorys;
 import com.example.da1pet.Model.Order;
 import com.example.da1pet.Model.Order_detail;
@@ -66,6 +67,10 @@ public class ProductActivity extends AppCompatActivity {
             tvloaisp.setText(categorys.getTenLoai());
             tvsoluongsanpham.setText(String.valueOf(products.getInventory()));
             tvmotasanpham.setText(products.getDescribe());
+            findViewById(R.id.btnthemspgiohang).setOnClickListener(v -> {
+                db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
+                Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+            });
             findViewById(R.id.btnbuypr).setOnClickListener(v -> {
                 if (bundle.getString("username").equals("")){
                     Toast.makeText(this, "Bạn cần phải đăng nhập trước", Toast.LENGTH_SHORT).show();
@@ -112,16 +117,14 @@ public class ProductActivity extends AppCompatActivity {
                                 });
                             }
                         }
-
                     });
-//                    Date currentTime = Calendar.getInstance().getTime();
                     String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                     view.findViewById(R.id.btnthanhtoan).setOnClickListener(v1 -> {
 
                            try {
                                db.orderDAO().insert(
                                        new Order(bundle.getString("username")
-                                               ,Integer.parseInt(tvtongtien.getText().toString()),
+                                               ,1,
                                                currentDate,Integer.parseInt(tvtongtien.getText().toString())));
                                listorder = (ArrayList<Order>) db.orderDAO().getAll();
                                Order order = listorder.get(listorder.size()-1);

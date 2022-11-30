@@ -15,13 +15,15 @@ import android.widget.TextView;
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.Model.Order;
 import com.example.da1pet.Model.Order_detail;
+import com.example.da1pet.Model.Products;
+import com.example.da1pet.innerjoin.InnerJoin;
 import com.example.da1pet.innerjoin.InnerOrder;
 
 import java.util.ArrayList;
 
 public class HoaDonChiTiet extends AppCompatActivity {
     RecyclerView rv;
-    ArrayList<InnerOrder> list;
+    ArrayList<InnerJoin> list;
     String TAG = "zzzzzzz";
     DbRoom db;
     @Override
@@ -34,7 +36,7 @@ public class HoaDonChiTiet extends AppCompatActivity {
         });
         rv = findViewById(R.id.rvorderdetail);
         Bundle bundle = getIntent().getExtras();
-        list = (ArrayList<InnerOrder>) db.orderDetailDAO().getOrderDetail(bundle.getInt("id_order"));
+        list = (ArrayList<InnerJoin>) db.orderDetailDAO().getOrder(bundle.getInt("id_order"));
         OrderAdapter adapter = new OrderAdapter(list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rv.setLayoutManager(linearLayoutManager);
@@ -42,8 +44,8 @@ public class HoaDonChiTiet extends AppCompatActivity {
 
     }
     public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
-        ArrayList<InnerOrder> list;
-        public OrderAdapter(ArrayList<InnerOrder> list) {
+        ArrayList<InnerJoin> list;
+        public OrderAdapter(ArrayList<InnerJoin> list) {
             this.list = list;
         }
 
@@ -67,7 +69,7 @@ public class HoaDonChiTiet extends AppCompatActivity {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            InnerOrder innerOrder;
+            InnerJoin innerOrder;
             TextView tvtenpr,tvgiapr;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);

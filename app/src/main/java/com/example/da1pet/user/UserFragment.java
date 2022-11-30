@@ -57,6 +57,7 @@ public class UserFragment extends Fragment {
         });
         view.findViewById(R.id.giohang).setOnClickListener(v -> {
             Intent intent = new Intent(this.getActivity(), Shoppet.class);
+            intent.putExtra("idcart",getActivity().getIntent().getStringExtra("username"));
             startActivity(intent);
         });
     }

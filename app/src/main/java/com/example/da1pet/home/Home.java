@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.LoginActivity;
 import com.example.da1pet.Model.Products;
 import com.example.da1pet.NavigationActivity;
 import com.example.da1pet.ProductActivity;
@@ -47,8 +48,15 @@ public class Home extends Fragment {
         animationDrawable.start();
         ImageButton btn = view.findViewById(R.id.btnshop);
         btn.setOnClickListener(v -> {
-            Intent intent = new Intent(this.getActivity(), Shoppet.class);
-            startActivity(intent);
+            if (getActivity().getIntent().getStringExtra("username").equals("")){
+                Intent intent = new Intent(this.getActivity(), LoginActivity.class);
+                startActivity(intent);
+            }else {
+                Intent intent = new Intent(this.getActivity(), Shoppet.class);
+                intent.putExtra("idcart",getActivity().getIntent().getStringExtra("username"));
+                startActivity(intent);
+            }
+
         });
         NonScrollGridView gridView = view.findViewById(R.id.lv);
         gridView.setNumColumns(2);

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 
 import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.Model.Cart;
 import com.example.da1pet.Model.User;
 
 import com.example.da1pet.databinding.ActivityLoginBinding;
@@ -104,6 +105,11 @@ public class LoginActivity extends AppCompatActivity {
                     rememberUser(username,password,binding.chkRememberPass.isChecked());
                     //Start intent
                     Intent intent =new Intent(LoginActivity.this,NavigationActivity.class);
+                    try {
+                        db.cartDAO().insertCart(new Cart(user.getId_user(),user.getId_user()));
+                    }catch (Exception e){
+                        e.getMessage();
+                    }
                     intent.putExtra("username", user.getId_user());
                     startActivity(intent);
                 }else {

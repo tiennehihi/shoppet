@@ -8,6 +8,7 @@ import androidx.room.Update;
 
 
 import com.example.da1pet.Model.Cart_item;
+import com.example.da1pet.innerjoin.InnerCart;
 
 import java.util.List;
 
@@ -21,5 +22,9 @@ public interface Cart_itemDAO {
     void DeleteCartItem(Cart_item cartItem);
     @Query("select * from Cart_item")
     List<Cart_item> getAll();
+    @Query("select products.img_product,products.name_products,products.price,products.inventory,Cart_item.id_products as id_product " +
+            "from Cart_item inner join products on Cart_item.id_products = products.id_products " +
+            "where Cart_item.id_cart = :idcart")
+    List<InnerCart> getAllCartItemById(String idcart);
 
 }

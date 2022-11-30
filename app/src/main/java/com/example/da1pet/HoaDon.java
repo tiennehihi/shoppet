@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 public class HoaDon extends AppCompatActivity {
     RecyclerView rv;
     DbRoom db;
+    String TAG = "zzzzzzz";
     ArrayList<Order> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +60,8 @@ public class HoaDon extends AppCompatActivity {
             holder.order = list.get(position);
             holder.tv_order_id.setText(String.valueOf(holder.order.getId_order()));
             holder.tv_order_date.setText(holder.order.getDate());
-
-            holder.tv_total.setText(String.valueOf(holder.order.getTotal()));
+            holder.tvitem.setText(holder.order.getTotal()+" item");
+            holder.tv_total.setText(String.valueOf(holder.order.getThanhToan()));
         }
 
         @Override
@@ -69,11 +71,12 @@ public class HoaDon extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             Order order;
-            TextView tv_order_id,tv_order_date,tv_total;
+            TextView tv_order_id,tv_order_date,tv_total,tvitem;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 db = DbRoom.getInstance(HoaDon.this);
                 tv_order_id = itemView.findViewById(R.id.tv_order_id);
+                tvitem = itemView.findViewById(R.id.tvitem);
                 tv_order_date = itemView.findViewById(R.id.tv_order_date);
                 tv_total = itemView.findViewById(R.id.tv_total);
                 itemView.setOnClickListener(v -> {

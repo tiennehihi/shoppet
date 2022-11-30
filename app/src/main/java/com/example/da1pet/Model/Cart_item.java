@@ -1,20 +1,25 @@
 package com.example.da1pet.Model;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(foreignKeys = {
+        @ForeignKey(entity = Products.class, parentColumns = "id_products", childColumns = "id_products", onDelete = ForeignKey.CASCADE),
+        @ForeignKey(entity = Cart.class, parentColumns = "id_cart", childColumns = "id_cart", onDelete = ForeignKey.CASCADE)
+})
 public class Cart_item {
-
+    @PrimaryKey(autoGenerate = true)
     private Integer id_cartItem;
+    private String id_cart;
     private Integer id_products;
     private Integer quantity;
 
     public Cart_item() {
     }
 
-    public Cart_item(Integer id_cartItem, Integer id_products, Integer quantity) {
-
-        this.id_cartItem = id_cartItem;
+    public Cart_item( String id_cart, Integer id_products, Integer quantity) {
+        this.id_cart = id_cart;
         this.id_products = id_products;
         this.quantity = quantity;
     }
@@ -25,6 +30,14 @@ public class Cart_item {
 
     public void setId_cartItem(Integer id_cartItem) {
         this.id_cartItem = id_cartItem;
+    }
+
+    public String getId_cart() {
+        return id_cart;
+    }
+
+    public void setId_cart(String id_cart) {
+        this.id_cart = id_cart;
     }
 
     public Integer getId_products() {
