@@ -42,7 +42,10 @@ public class Products {
         this.describe = describe;
         this.img_product = img_product;
     }
-
+    public Products(Integer id_products,Integer inventory){
+        this.id_products = id_products;
+        this.inventory = inventory;
+    }
     public Products() {
     }
 

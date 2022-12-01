@@ -22,8 +22,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.HoaDon;
+import com.example.da1pet.Model.Cart_item;
 import com.example.da1pet.Model.Order;
 import com.example.da1pet.Model.Order_detail;
+import com.example.da1pet.Model.Products;
 import com.example.da1pet.NavigationActivity;
 import com.example.da1pet.R;
 import com.example.da1pet.home.Home;
@@ -40,11 +43,9 @@ public class Shoppet extends AppCompatActivity {
     ArrayList<InnerCart> list;
     DbRoom db;
     String TAG = "zzzzzz";
-    ArrayList<Integer> list1 = new ArrayList<>();
-    ArrayList<Integer> list2 = new ArrayList<>();
     int totalcheck = 0;
     TextView tvtotalall;
-
+    ArrayList<PR> list1 = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +64,31 @@ public class Shoppet extends AppCompatActivity {
         rvcart.setAdapter(adapter);
 
     }
+    public class PR {
+        private Integer id;
+        private Integer soluong;
 
+        public PR(Integer id, Integer soluong) {
+            this.id = id;
+            this.soluong = soluong;
+        }
+
+        public Integer getId() {
+            return id;
+        }
+
+        public void setId(Integer id) {
+            this.id = id;
+        }
+
+        public Integer getSoluong() {
+            return soluong;
+        }
+
+        public void setSoluong(Integer soluong) {
+            this.soluong = soluong;
+        }
+    }
     public class RVAdapter extends RecyclerView.Adapter<RVAdapter.Viewholder> {
         ArrayList<InnerCart> list;
 
@@ -89,15 +114,24 @@ public class Shoppet extends AppCompatActivity {
             holder.img.setImageBitmap(BitmapFactory.decodeByteArray(holder.innerCart.getImg_product(), 0, holder.innerCart.getImg_product().length));
             holder.ckbox.setOnClickListener(v -> {
                 if (holder.ckbox.isChecked()){
-                    list2.add(Integer.parseInt(holder.tvsoluoong.getText().toString()));
+                    list1.add(new PR(holder.innerCart.getId_product(),Integer.parseInt(holder.tvsoluoong.getText().toString())));
                     tvtotalall.setText(String.valueOf(Integer.parseInt(tvtotalall.getText().toString()) + Integer.parseInt(holder.tvtotalprice.getText().toString())));
                     totalcheck = totalcheck + 1;
+                    holder.tbtn.setEnabled(false);
+                    holder.gbtn.setEnabled(false);
                 }else if(!holder.ckbox.isChecked()) {
-                    list2.remove(position);
+                    for (int i = 0; i < list1.size(); i++) {
+                        PR p = list1.get(i);
+                        if (p.getId() == holder.innerCart.getId_product()){
+                            list1.remove(i);
+                            break;
+                        }
+                    }
                     tvtotalall.setText(String.valueOf(Integer.parseInt(tvtotalall.getText().toString()) - Integer.parseInt(holder.tvtotalprice.getText().toString())));
                     totalcheck = totalcheck - 1;
+                    holder.tbtn.setEnabled(true);
+                    holder.gbtn.setEnabled(true);
                 }
-
             });
         }
 
@@ -112,7 +146,7 @@ public class Shoppet extends AppCompatActivity {
             InnerCart innerCart;
 
             TextView tvnamepro, tvinventory, tvprice, tvsoluoong, tvtotalprice,tvid;
-
+            Button tbtn,gbtn;
             public Viewholder(@NonNull View itemView) {
                 super(itemView);
                 ckbox = itemView.findViewById(R.id.ckbox);
@@ -124,8 +158,8 @@ public class Shoppet extends AppCompatActivity {
                 tvsoluoong = itemView.findViewById(R.id.tvsoluoong);
                 tvtotalprice = itemView.findViewById(R.id.tvtotalprice);
                 String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-                Button tbtn = itemView.findViewById(R.id.tbtn);
-                Button gbtn = itemView.findViewById(R.id.gbtn);
+                tbtn = itemView.findViewById(R.id.tbtn);
+                gbtn = itemView.findViewById(R.id.gbtn);
                 tbtn.setOnClickListener(v -> {
                     gbtn.setEnabled(true);
                     tvsoluoong.setText(String.valueOf(Integer.parseInt(tvsoluoong.getText().toString()) + 1));
@@ -161,11 +195,25 @@ public class Shoppet extends AppCompatActivity {
                             Order order = listorder.get(listorder.size()-1);
 
                             for (int i = 0 ;i<totalcheck;i++){
+                                PR pr = list1.get(i);
+
                                 db.orderDetailDAO().insert(
                                         new Order_detail(order.getId_order()
-                                                ,Integer.parseInt(tvid.getText().toString())
-                                                ,list2.get(i)));
+                                                ,pr.getId()
+                                                ,pr.getSoluong()));
+                                for (int j = 0; j < list.size(); j++) {
+                                    InnerCart innerCart1 = list.get(j);
+                                    if (pr.getId() == innerCart1.getId_product()){
+                                        db.productsDAO().updateinven(pr.getId(),innerCart1.getInventory()-pr.getSoluong());
+                                    }
+
+                                }
+                                db.cartItemDAO().deleteitem(pr.getId());
                             }
+                            Toast.makeText(Shoppet.this, "Mua hàng thành công", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Shoppet.this, HoaDon.class);
+                            intent.putExtra("username",getIntent().getExtras().getString("idcart"));
+                            startActivity(intent);
                         }catch (Exception e){
                             Log.e(TAG, "Viewholder: "+e.getMessage() );
                         }

@@ -55,7 +55,14 @@ public class NavigationActivity extends AppCompatActivity {
                 menu = navigationView.getMenu();
                 menuItem = menu.findItem(R.id.nav_user);
                 menuItem.setVisible(false);
-            }else {
+                MenuItem menuItem1 = menu.findItem(R.id.addproduct);
+                menuItem1.setVisible(false);
+            }else if (getIntent().getExtras().getString("username").equals("admin")){
+                menu = navigationView.getMenu();
+                MenuItem menuItem1 = menu.findItem(R.id.addproduct);
+                menuItem1.setVisible(true);
+            }
+            else {
                 menu = navigationView.getMenu();
                 menuItem = menu.findItem(R.id.nav_login);
                 menuItem.setVisible(false);
@@ -71,7 +78,12 @@ public class NavigationActivity extends AppCompatActivity {
                 if (item.getItemId() == R.id.nav_login){
                     Intent intent = new Intent(NavigationActivity.this, LoginActivity.class);
                     startActivity(intent);
-                }else {
+                }else if (item.getItemId() == R.id.addproduct){
+                    Intent intent = new Intent(NavigationActivity.this, ThemSanPham.class);
+                    intent.putExtra("username",getIntent().getStringExtra("username"));
+                    startActivity(intent);
+                }
+                else {
                     NavigationUI.onNavDestinationSelected(item, navController);
                     drawer.closeDrawers();
                 }

@@ -39,5 +39,8 @@
             android:title="Search"
             android:icon="@drawable/ic_baseline_search_24"
             />
+        <item android:id="@+id/addproduct"
+            android:title="Thêm sản phẩm"
+            />
     </group>
 </menu>

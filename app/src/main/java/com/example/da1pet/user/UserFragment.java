@@ -38,15 +38,6 @@ public class UserFragment extends Fragment {
             intent.putExtra("username",getActivity().getIntent().getStringExtra("username"));
             startActivity(intent);
         });
-        view.findViewById(R.id.tvthemsp).setOnClickListener(v -> {
-            try {
-                Intent intent = new Intent(this.getActivity(), ThemSanPham.class);
-                intent.putExtra("username",getActivity().getIntent().getStringExtra("username"));
-                startActivity(intent);
-            }catch (Exception e){
-                e.getMessage();
-            }
-        });
         view.findViewById(R.id.imglhe).setOnClickListener(v -> {
             Intent intent = new Intent(this.getActivity(), Lienhe.class);
             startActivity(intent);

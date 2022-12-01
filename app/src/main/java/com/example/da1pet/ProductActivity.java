@@ -38,8 +38,10 @@ public class ProductActivity extends AppCompatActivity {
     String TAG = "zzzzzzzzzz";
     AlertDialog alertDialog;
     List<Categorys> categorysList;
+    int a = 0;
     ImageView imageviewproduct;
     ArrayList<Order> listorder;
+    ArrayList<Cart_item> listcart;
     TextView tvtensp,tvloaisp,tvsoluongsanpham,tvmotasanpham,tvtongtien;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +70,26 @@ public class ProductActivity extends AppCompatActivity {
             tvsoluongsanpham.setText(String.valueOf(products.getInventory()));
             tvmotasanpham.setText(products.getDescribe());
             findViewById(R.id.btnthemspgiohang).setOnClickListener(v -> {
-                db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
-                Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+//                listcart = (ArrayList<Cart_item>) db.cartItemDAO().getAll();
+//                a = 0;
+//                try {
+//                    for (int i = 0; i < db.cartItemDAO().getAll().size(); i++) {
+//                        Cart_item cartItem = listcart.get(i);
+//                        if (products.getId_products() == cartItem.getId_products()){
+                            db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
+                            Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+//                            a++;
+//                            break;
+//                        }
+//                    }
+//                    if (a == 0){
+//                        Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
+//                    }
+//                }catch (Exception e){
+//                    e.getMessage();
+//                }
+
+
             });
             findViewById(R.id.btnbuypr).setOnClickListener(v -> {
                 if (bundle.getString("username").equals("")){

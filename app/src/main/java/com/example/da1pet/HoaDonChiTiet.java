@@ -37,6 +37,13 @@ public class HoaDonChiTiet extends AppCompatActivity {
         rv = findViewById(R.id.rvorderdetail);
         Bundle bundle = getIntent().getExtras();
         list = (ArrayList<InnerJoin>) db.orderDetailDAO().getOrder(bundle.getInt("id_order"));
+        int tong = 0;
+        for (int i = 0 ; i<list.size();i++){
+            InnerJoin innerJoin  = list.get(i);
+            tong+=innerJoin.getGia();
+        }
+        TextView tvtongtien = findViewById(R.id.tvtongtien);
+        tvtongtien.setText(String.valueOf(tong));
         OrderAdapter adapter = new OrderAdapter(list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rv.setLayoutManager(linearLayoutManager);
@@ -61,6 +68,7 @@ public class HoaDonChiTiet extends AppCompatActivity {
             holder.innerOrder = list.get(position);
             holder.tvtenpr.setText(holder.innerOrder.getNameproduct());
             holder.tvgiapr.setText(String.valueOf(holder.innerOrder.getGia()));
+            holder.tvsoluong.setText(String.valueOf(holder.innerOrder.getQuantity()));
         }
 
         @Override
@@ -70,11 +78,12 @@ public class HoaDonChiTiet extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             InnerJoin innerOrder;
-            TextView tvtenpr,tvgiapr;
+            TextView tvtenpr,tvgiapr,tvsoluong;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 tvtenpr = itemView.findViewById(R.id.tvnamepr);
                 tvgiapr = itemView.findViewById(R.id.tvgiapr);
+                tvsoluong = itemView.findViewById(R.id.tvsoluong);
             }
         }
     }
