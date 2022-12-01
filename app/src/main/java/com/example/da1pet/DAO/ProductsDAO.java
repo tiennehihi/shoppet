@@ -30,4 +30,7 @@ public interface ProductsDAO {
 
     @Query("select * from Products WHERE id_products = :id")
     List<Products> getItemById(int id);
+
+    @Query("delete from products where id_products = :id")
+    void deleteproduct(Integer id);
 }

@@ -31,6 +31,10 @@
     <fragment
         android:id="@+id/nav_pass"
         android:name="com.example.da1pet.Fragment.ChangePasswordFragment"
-        android:label="Hóa đơn"
+        android:label="Đổi mật khẩu"
         tools:layout="@layout/fragment_change_password" />
+    <fragment android:id="@+id/addproduct"
+        android:name="com.example.da1pet.ProductFragment"
+        android:label="Sản phẩm"
+        tools:layout="@layout/fragment_product"/>
 </navigation>

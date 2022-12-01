@@ -48,7 +48,9 @@ public class LoginActivity extends AppCompatActivity {
         binding.chkRememberPass.setChecked(preferences.getBoolean("REMEMBER",false));
 
         findViewById(R.id.btnback).setOnClickListener(v -> {
-            onBackPressed();
+            Intent intent = new Intent(this,NavigationActivity.class);
+            intent.putExtra("username","");
+            startActivity(intent);
         });
 
 

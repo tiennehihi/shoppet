@@ -42,7 +42,7 @@ public class ProductActivity extends AppCompatActivity {
     ImageView imageviewproduct;
     ArrayList<Order> listorder;
     ArrayList<Cart_item> listcart;
-    TextView tvtensp,tvloaisp,tvsoluongsanpham,tvmotasanpham,tvtongtien;
+    TextView tvtensp,tvloaisp,tvsoluongsanpham,tvmotasanpham,tvtongtien,tvidsp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +53,7 @@ public class ProductActivity extends AppCompatActivity {
         tvloaisp = findViewById(R.id.tvloaisp);
         tvsoluongsanpham = findViewById(R.id.tvsoluongsanpham);
         tvmotasanpham = findViewById(R.id.tvmotasanpham);
+        tvidsp = findViewById(R.id.tvidsp);
         findViewById(R.id.btnback).setOnClickListener(v -> {
             onBackPressed();
         });
@@ -69,25 +70,26 @@ public class ProductActivity extends AppCompatActivity {
             tvloaisp.setText(categorys.getTenLoai());
             tvsoluongsanpham.setText(String.valueOf(products.getInventory()));
             tvmotasanpham.setText(products.getDescribe());
+            tvidsp.setText(String.valueOf(products.getId_products()));
             findViewById(R.id.btnthemspgiohang).setOnClickListener(v -> {
-//                listcart = (ArrayList<Cart_item>) db.cartItemDAO().getAll();
-//                a = 0;
-//                try {
-//                    for (int i = 0; i < db.cartItemDAO().getAll().size(); i++) {
-//                        Cart_item cartItem = listcart.get(i);
-//                        if (products.getId_products() == cartItem.getId_products()){
+                listcart = (ArrayList<Cart_item>) db.cartItemDAO().getAll();
+                a = 0;
+                try {
+                    for (int i = 0; i < db.cartItemDAO().getAll().size(); i++) {
+                        Cart_item cartItem = listcart.get(i);
+                        if (products.getId_products() == cartItem.getId_products()){
                             db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
                             Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
-//                            a++;
-//                            break;
-//                        }
-//                    }
-//                    if (a == 0){
-//                        Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
-//                    }
-//                }catch (Exception e){
-//                    e.getMessage();
-//                }
+                            a++;
+                            break;
+                        }
+                    }
+                    if (a == 0){
+                        Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
+                    }
+                }catch (Exception e){
+                    e.getMessage();
+                }
 
 
             });

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".UpdateProduct">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:background="@color/teal_200"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_200"
+            android:id="@+id/btnback"
+            android:src="@drawable/ic_baseline_arrow_back_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sửa sản phẩm"
+            android:layout_gravity="center"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+    </androidx.appcompat.widget.Toolbar>
+    <EditText
+        android:id="@+id/edtidsanpham"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập ID sản phẩm"/>
+    <Button
+        android:id="@+id/btntimkiem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tìm kiếm"
+        android:textColor="@color/white"
+        android:background="@color/teal_200"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edttensp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgournd_input_layout"
+                android:textColorHint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:maxLines="1"
+                    android:enabled="false"
+                    android:hint="Tên sản phẩm" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Spinner
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spntheloai"
+                />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtinventory"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgournd_input_layout"
+                android:textColorHint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:enabled="false"
+                    android:hint="Số lượng sản phẩm" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtprice"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgournd_input_layout"
+                android:textColorHint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    android:enabled="false"
+                    android:hint="Giá sản phẩm" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtmota"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/backgournd_input_layout"
+                android:textColorHint="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:enabled="false"
+                    android:hint="Mô tả" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:id="@+id/imgproduct"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/suaimg"
+                android:layout_margin="10dp"
+                android:enabled="false"
+                android:textColor="@color/white"
+                android:background="@color/teal_200"
+                android:text="Sửa ảnh sản phẩm"/>
+            <Button
+                android:enabled="false"
+                android:id="@+id/btnsua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sửa sản phẩm"
+                android:textColor="@color/white"
+                android:background="@color/teal_200"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
