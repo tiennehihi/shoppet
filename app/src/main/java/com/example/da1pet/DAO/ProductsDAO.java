@@ -33,4 +33,7 @@ public interface ProductsDAO {
 
     @Query("delete from products where id_products = :id")
     void deleteproduct(Integer id);
+
+    @Query("select*from products where name_products like :keyWord")
+    List<Products> getSearch(String keyWord);
 }

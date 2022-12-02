@@ -5,11 +5,16 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.SearchView;
 
+import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.Model.ProductsViewModel;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.MenuItemCompat;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -24,13 +29,15 @@ public class NavigationActivity extends AppCompatActivity {
     MenuItem menuItem;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationBinding binding;
-
+    DbRoom db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityNavigationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        db = DbRoom.getInstance(this);
 
         setSupportActionBar(binding.appBarNavigation.toolbar);
         binding.appBarNavigation.fab.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +118,20 @@ public class NavigationActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         getMenuInflater().inflate(R.menu.navigation, menu);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.search));
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {return false;}
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                ProductsViewModel model = new ViewModelProvider(NavigationActivity.this).get(ProductsViewModel.class);
+                model.setListProduct(db.productsDAO().getSearch("%"+newText+"%"));
+                return false;
+            }
+        });
         return true;
     }
 

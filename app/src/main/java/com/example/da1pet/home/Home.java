@@ -8,30 +8,38 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.room.Room;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.LoginActivity;
 import com.example.da1pet.Model.Products;
+import com.example.da1pet.Model.ProductsViewModel;
 import com.example.da1pet.NavigationActivity;
 import com.example.da1pet.ProductActivity;
 import com.example.da1pet.R;
 import com.example.da1pet.Shop.Shoppet;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class Home extends Fragment {
     DbRoom db;
     ArrayList<Products> list;
+    GrAdapter grAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,8 +68,15 @@ public class Home extends Fragment {
 //        });
         NonScrollGridView gridView = view.findViewById(R.id.lv);
         gridView.setNumColumns(2);
-        gridView.setAdapter(new GrAdapter(list));
+        grAdapter = new GrAdapter(list);
+        gridView.setAdapter(grAdapter);
         gridView.setExpanded(true);
+        ProductsViewModel model = new ViewModelProvider(getActivity()).get(ProductsViewModel.class);
+        model.getListProduct().observe(getViewLifecycleOwner(),o -> {
+            list.clear();
+            list.addAll((ArrayList<Products>) o);
+            grAdapter.notifyDataSetChanged();
+        });
     }
     public class GrAdapter extends BaseAdapter {
         ArrayList<Products> list;
