@@ -27,5 +27,8 @@ public interface UserDAO {
     User getUserByname(String name);
     @Query("select *from User where User.id_user = :id limit 1")
     User getUserByCode(int id);
-
+    @Query("update user set password = :newpass where id_user = :id")
+    void doipass(String newpass,String id);
+    @Query("select *from User where User.name = :name limit 1")
+    List<User> getUserByID(String name);
 }

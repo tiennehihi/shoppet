@@ -45,7 +45,7 @@ public class NavigationActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_user, R.id.nav_TheLoai, R.id.nav_pass, R.id.addproduct)
+                R.id.nav_home, R.id.nav_user,  R.id.nav_pass, R.id.addproduct)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation);
@@ -62,15 +62,21 @@ public class NavigationActivity extends AppCompatActivity {
                 menuItem2.setVisible(false);
                 MenuItem menuItem3 = menu.findItem(R.id.nav_logout);
                 menuItem3.setVisible(false);
+                MenuItem menuItem4 = menu.findItem(R.id.nav_Khachhang);
+                menuItem4.setVisible(false);
             } else {
                 if (getIntent().getExtras().getString("username").equals("admin")) {
                     menu = navigationView.getMenu();
                     MenuItem menuItem1 = menu.findItem(R.id.addproduct);
                     menuItem1.setVisible(true);
+                    MenuItem menuItem4 = menu.findItem(R.id.nav_Khachhang);
+                    menuItem4.setVisible(true);
                 } else {
                     menu = navigationView.getMenu();
                     MenuItem menuItem1 = menu.findItem(R.id.addproduct);
                     menuItem1.setVisible(false);
+                    MenuItem menuItem4 = menu.findItem(R.id.nav_Khachhang);
+                    menuItem4.setVisible(false);
                 }
                 menu = navigationView.getMenu();
                 menuItem = menu.findItem(R.id.nav_login);
