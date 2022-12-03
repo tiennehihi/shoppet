@@ -64,7 +64,6 @@ public class Home extends Fragment {
 //                intent.putExtra("idcart",getActivity().getIntent().getStringExtra("username"));
 //                startActivity(intent);
 //            }
-//
 //        });
         NonScrollGridView gridView = view.findViewById(R.id.lv);
         gridView.setNumColumns(2);

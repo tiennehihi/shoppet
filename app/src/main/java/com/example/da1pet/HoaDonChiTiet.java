@@ -1,16 +1,22 @@
 package com.example.da1pet;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.Model.Order;
@@ -20,6 +26,7 @@ import com.example.da1pet.innerjoin.InnerJoin;
 import com.example.da1pet.innerjoin.InnerOrder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HoaDonChiTiet extends AppCompatActivity {
     RecyclerView rv;
@@ -48,7 +55,59 @@ public class HoaDonChiTiet extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         rv.setLayoutManager(linearLayoutManager);
         rv.setAdapter(adapter);
+        Button btnnhandon = findViewById(R.id.btnnhandon);
+        Button btnhuydon = findViewById(R.id.btnhuydon);
+        List<String> listorder = db.orderDAO().getstatus(bundle.getInt("id_order"));
+        if (listorder.get(0).equals("Đã Nhận hàng")||listorder.get(0).equals("Đơn hàng đã hủy")){
+            btnnhandon.setEnabled(false);
+            btnnhandon.setBackgroundColor(Color.parseColor("#EC6565"));
+            btnhuydon.setEnabled(false);
+        }
+        findViewById(R.id.btnnhandon).setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Thông báo");
+            builder.setMessage("Bạn đã nhận hàng?");
+            builder.setPositiveButton("Đã Nhận hàng", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    db.orderDAO().updateStatus("Đã Nhận hàng",bundle.getInt("id_order"));
+                    Intent intent = new Intent(HoaDonChiTiet.this,HoaDon.class);
+                    intent.putExtra("username",getIntent().getExtras().getString("username"));
+                    startActivity(intent);
+                }
+            });
+            builder.setNegativeButton("Chưa", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
+                }
+            });
+            builder.show();
+        });
+        findViewById(R.id.btnhuydon).setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Thông báo");
+            builder.setMessage("Bạn có muốn hủy đơn?");
+            builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Toast.makeText(HoaDonChiTiet.this, "Bạn đã hủy đơn", Toast.LENGTH_SHORT).show();
+                    db.orderDAO().updateStatus("Hủy đơn hàng",bundle.getInt("id_order"));
+                    Intent intent = new Intent(HoaDonChiTiet.this,HoaDon.class);
+                    intent.putExtra("username",getIntent().getExtras().getString("username"));
+                    startActivity(intent);
+                }
+            });
+            builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            builder.show();
+
+
+        });
     }
     public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
         ArrayList<InnerJoin> list;

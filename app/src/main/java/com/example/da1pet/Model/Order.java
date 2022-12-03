@@ -19,7 +19,7 @@ public class Order {
     private Integer total;
     private String date;
     private Integer thanhToan;
-
+    private String status;
     public Order() {
     }
 
@@ -29,6 +29,23 @@ public class Order {
         this.total = total;
         this.date = date;
         this.thanhToan = thanhToan;
+    }
+
+    public Order(String id_user, Integer total, String date, Integer thanhToan, String status) {
+        this.id_order = id_order;
+        this.id_user = id_user;
+        this.total = total;
+        this.date = date;
+        this.thanhToan = thanhToan;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Integer getId_order() {

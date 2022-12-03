@@ -24,11 +24,18 @@ public interface OrderDAO {
 
     @Delete
     void delete(Order order);
+
     @Query("select id_order from `order` as hd where hd.id_order = :id_order and hd.id_user = :id_user order by id_order desc limit 1")
     int getCode(int id_order, String id_user);
 
-    @Query("select * from `Order` where id_user = :iduser")
+    @Query("select * from `Order` where id_user = :iduser order by id_order desc")
     List<Order> getAllByUser(String iduser);
+
+    @Query("update `order` set status = :newstatus where id_order = :id")
+    void updateStatus(String newstatus,int id);
+
+    @Query("select status from `order` where id_order = :id")
+    List<String> getstatus(int id);
 }
 
 

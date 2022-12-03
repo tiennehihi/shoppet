@@ -72,26 +72,28 @@ public class ProductActivity extends AppCompatActivity {
             tvmotasanpham.setText(products.getDescribe());
             tvidsp.setText(String.valueOf(products.getId_products()));
             findViewById(R.id.btnthemspgiohang).setOnClickListener(v -> {
-                listcart = (ArrayList<Cart_item>) db.cartItemDAO().getAll();
-                a = 0;
-                try {
-                    for (int i = 0; i < db.cartItemDAO().getAll().size(); i++) {
-                        Cart_item cartItem = listcart.get(i);
-                        if (products.getId_products() == cartItem.getId_products()){
-                            db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
-                            Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
-                            a++;
-                            break;
+                if (bundle.getString("username").equals("")){
+                    Toast.makeText(this, "Hãy đăng nhập để dùng chức năng này", Toast.LENGTH_SHORT).show();
+                }else {
+                    listcart = (ArrayList<Cart_item>) db.cartItemDAO().getAll();
+                    a = 0;
+                    try {
+                        for (int i = 0; i < db.cartItemDAO().getAll().size(); i++) {
+                            Cart_item cartItem = listcart.get(i);
+                            if (products.getId_products() == cartItem.getId_products()){
+                                db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
+                                Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                                a++;
+                                break;
+                            }
                         }
+                        if (a == 0){
+                            Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
+                        }
+                    }catch (Exception e){
+                        e.getMessage();
                     }
-                    if (a == 0){
-                        Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
-                    }
-                }catch (Exception e){
-                    e.getMessage();
                 }
-
-
             });
             findViewById(R.id.btnbuypr).setOnClickListener(v -> {
                 if (bundle.getString("username").equals("")){
@@ -147,7 +149,7 @@ public class ProductActivity extends AppCompatActivity {
                                db.orderDAO().insert(
                                        new Order(bundle.getString("username")
                                                ,1,
-                                               currentDate,Integer.parseInt(tvtongtien.getText().toString())));
+                                               currentDate,Integer.parseInt(tvtongtien.getText().toString()),"Chưa nhận hàng"));
                                listorder = (ArrayList<Order>) db.orderDAO().getAll();
                                Order order = listorder.get(listorder.size()-1);
                                db.orderDetailDAO().insert(

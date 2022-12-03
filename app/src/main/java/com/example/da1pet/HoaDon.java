@@ -62,6 +62,7 @@ public class HoaDon extends AppCompatActivity {
             holder.tv_order_date.setText(holder.order.getDate());
             holder.tvitem.setText(holder.order.getTotal()+" item");
             holder.tv_total.setText(String.valueOf(holder.order.getThanhToan()));
+            holder.tvstatus.setText(holder.order.getStatus());
         }
 
         @Override
@@ -71,7 +72,7 @@ public class HoaDon extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             Order order;
-            TextView tv_order_id,tv_order_date,tv_total,tvitem;
+            TextView tv_order_id,tv_order_date,tv_total,tvitem,tvstatus;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 db = DbRoom.getInstance(HoaDon.this);
@@ -79,10 +80,12 @@ public class HoaDon extends AppCompatActivity {
                 tvitem = itemView.findViewById(R.id.tvitem);
                 tv_order_date = itemView.findViewById(R.id.tv_order_date);
                 tv_total = itemView.findViewById(R.id.tv_total);
+                tvstatus = itemView.findViewById(R.id.tvstatus);
                 itemView.setOnClickListener(v -> {
                     Intent intent = new Intent(HoaDon.this,HoaDonChiTiet.class);
                     order = list.get(getAdapterPosition());
                     intent.putExtra("id_order",order.getId_order());
+                    intent.putExtra("username",getIntent().getExtras().getString("username"));
                     startActivity(intent);
                 });
             }

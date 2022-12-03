@@ -38,7 +38,7 @@
                     android:gravity="right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="#BD1A1A"
                     android:textStyle="bold"
                     android:id="@+id/tv_total"
                     android:layout_marginRight="20dp"
@@ -47,7 +47,13 @@
             </LinearLayout>
 
         </LinearLayout>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvstatus"
+            android:textStyle="bold"
+            android:textColor="#BD1A1A"
+            />
     </LinearLayout>
 
 
