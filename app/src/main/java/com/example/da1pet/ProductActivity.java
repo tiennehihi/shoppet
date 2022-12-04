@@ -81,14 +81,15 @@ public class ProductActivity extends AppCompatActivity {
                         for (int i = 0; i < db.cartItemDAO().getAll().size(); i++) {
                             Cart_item cartItem = listcart.get(i);
                             if (products.getId_products() == cartItem.getId_products()){
-                                db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
-                                Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
                                 a++;
                                 break;
                             }
                         }
                         if (a == 0){
-                            Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
+
+                            db.cartItemDAO().insertCartItem(new Cart_item(bundle.getString("username"),bundle.getInt("idsanpham"),1));
+                            Toast.makeText(this, "Đã thêm sản phẩm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                         }
                     }catch (Exception e){
                         e.getMessage();
