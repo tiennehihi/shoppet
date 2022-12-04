@@ -78,7 +78,7 @@ public class ProductActivity extends AppCompatActivity {
                     listcart = (ArrayList<Cart_item>) db.cartItemDAO().getAll();
                     a = 0;
                     try {
-                        for (int i = 0; i < db.cartItemDAO().getAll().size(); i++) {
+                        for (int i = 0; i < db.cartItemDAO().getAllCartItemById(bundle.getString("username")).size(); i++) {
                             Cart_item cartItem = listcart.get(i);
                             if (products.getId_products() == cartItem.getId_products()){
                                 Toast.makeText(this, "Sản phẩm đã có trong giỏ hàng", Toast.LENGTH_SHORT).show();
