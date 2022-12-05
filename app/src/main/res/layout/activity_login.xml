@@ -41,6 +41,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:maxLines="1"
                 android:layout_margin="15dp"
                 android:layout_height="wrap_content"
                 android:hint="USERNAME"/>
@@ -58,6 +59,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_margin="15dp"
+                android:maxLines="1"
                 android:layout_height="wrap_content"
                 android:hint="PASSWORD"
                 android:inputType="textPassword" />

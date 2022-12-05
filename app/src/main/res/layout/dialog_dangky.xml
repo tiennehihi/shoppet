@@ -32,6 +32,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_margin="15dp"
+                android:maxLines="1"
                 android:layout_height="match_parent"
                 android:hint="IDUser"
                 android:textColor="@color/black"/>
@@ -49,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_margin="15dp"
                 android:layout_height="match_parent"
+                android:maxLines="1"
                 android:hint="Name"
                 android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -65,6 +67,7 @@
                 android:layout_margin="15dp"
                 android:layout_height="match_parent"
                 android:hint="Number"
+                android:maxLines="1"
                 android:textColor="@color/black"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,7 +84,7 @@
                 android:layout_margin="15dp"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
-
+                android:maxLines="1"
                 android:hint="Password"/>
         </com.google.android.material.textfield.TextInputLayout>
 

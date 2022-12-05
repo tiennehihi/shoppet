@@ -33,7 +33,9 @@ public class HoaDon extends AppCompatActivity {
         rv = findViewById(R.id.rvorder);
         db = DbRoom.getInstance(this);
         findViewById(R.id.btnback).setOnClickListener(v -> {
-            onBackPressed();
+            Intent intent = new Intent(HoaDon.this,NavigationActivity.class);
+            intent.putExtra("username",getIntent().getExtras().getString("username"));
+            startActivity(intent);
         });
         list = (ArrayList<Order>) db.orderDAO().getAllByUser(getIntent().getExtras().getString("username"));
         OrderAdapter adapter = new OrderAdapter(list);

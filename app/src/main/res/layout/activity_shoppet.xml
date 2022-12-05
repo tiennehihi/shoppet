@@ -30,13 +30,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:layout_gravity="right"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:background="@color/teal_200"
-            android:src="@drawable/ic_baseline_notifications_24" />
 
         <TextView
             android:textAlignment="center"
@@ -58,7 +51,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.Toolbar
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/teal_200"
@@ -67,18 +61,28 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:text="Tổng"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-        <TextView
-            android:textSize="20dp"
-            android:text="0"
-            android:id="@+id/tvtotalall"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="Tổng thanh toán"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:textSize="20dp"
+                android:text="0VNĐ"
+                android:textColor="#E11515"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:id="@+id/tvtotalall"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"/>
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/btnthanhtoan"
@@ -88,7 +92,7 @@
             android:layout_gravity="right"
             android:background="@color/teal_200"
             android:src="@drawable/ic_baseline_shopping_cart_50" />
-    </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

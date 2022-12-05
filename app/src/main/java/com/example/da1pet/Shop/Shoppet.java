@@ -107,15 +107,14 @@ public class Shoppet extends AppCompatActivity {
         public void onBindViewHolder(@NonNull RVAdapter.Viewholder holder, int position) {
             holder.innerCart = list.get(position);
             holder.tvnamepro.setText(String.valueOf(holder.innerCart.getName_products()));
-            holder.tvid.setText(String.valueOf(holder.innerCart.getId_product()));
             holder.tvinventory.setText(String.valueOf(holder.innerCart.getInventory()));
             holder.tvprice.setText(String.valueOf(holder.innerCart.getPrice()));
-            holder.tvtotalprice.setText(String.valueOf(holder.innerCart.getPrice() * Integer.parseInt(holder.tvsoluoong.getText().toString())));
+            holder.tvtotalprice.setText(holder.innerCart.getPrice() * Integer.parseInt(holder.tvsoluoong.getText().toString())+"VNĐ");
             holder.img.setImageBitmap(BitmapFactory.decodeByteArray(holder.innerCart.getImg_product(), 0, holder.innerCart.getImg_product().length));
             holder.ckbox.setOnClickListener(v -> {
                 if (holder.ckbox.isChecked()){
                     list1.add(new PR(holder.innerCart.getId_product(),Integer.parseInt(holder.tvsoluoong.getText().toString())));
-                    tvtotalall.setText(String.valueOf(Integer.parseInt(tvtotalall.getText().toString()) + Integer.parseInt(holder.tvtotalprice.getText().toString())));
+                    tvtotalall.setText(String.valueOf(Integer.parseInt(tvtotalall.getText().toString().substring(0,tvtotalall.getText().toString().length()-3) + Integer.parseInt(holder.tvtotalprice.getText().toString().substring(0,holder.tvtotalprice.getText().toString().length()-3))))+"VNĐ");
                     totalcheck = totalcheck + 1;
                     holder.tbtn.setEnabled(false);
                     holder.gbtn.setEnabled(false);
@@ -127,7 +126,7 @@ public class Shoppet extends AppCompatActivity {
                             break;
                         }
                     }
-                    tvtotalall.setText(String.valueOf(Integer.parseInt(tvtotalall.getText().toString()) - Integer.parseInt(holder.tvtotalprice.getText().toString())));
+                    tvtotalall.setText(Integer.parseInt(tvtotalall.getText().toString().substring(0,tvtotalall.getText().toString().length()-3)) - Integer.parseInt(holder.tvtotalprice.getText().toString().substring(0,holder.tvtotalprice.getText().toString().length()-3))+"VNĐ");
                     totalcheck = totalcheck - 1;
                     holder.tbtn.setEnabled(true);
                     holder.gbtn.setEnabled(true);
@@ -145,13 +144,12 @@ public class Shoppet extends AppCompatActivity {
             ImageView img;
             InnerCart innerCart;
 
-            TextView tvnamepro, tvinventory, tvprice, tvsoluoong, tvtotalprice,tvid;
+            TextView tvnamepro, tvinventory, tvprice, tvsoluoong, tvtotalprice;
             Button tbtn,gbtn;
             public Viewholder(@NonNull View itemView) {
                 super(itemView);
                 ckbox = itemView.findViewById(R.id.ckbox);
                 img = itemView.findViewById(R.id.img);
-                tvid = itemView.findViewById(R.id.tvid);
                 tvnamepro = itemView.findViewById(R.id.tvnamepro);
                 tvinventory = itemView.findViewById(R.id.tvinventory);
                 tvprice = itemView.findViewById(R.id.tvprice);
@@ -163,9 +161,9 @@ public class Shoppet extends AppCompatActivity {
                 tbtn.setOnClickListener(v -> {
                     gbtn.setEnabled(true);
                     tvsoluoong.setText(String.valueOf(Integer.parseInt(tvsoluoong.getText().toString()) + 1));
-                    tvtotalprice.setText(String.valueOf(Integer.parseInt(tvsoluoong.getText().toString()) * Integer.parseInt(tvprice.getText().toString())));
+                    tvtotalprice.setText(String.valueOf(Integer.parseInt(tvsoluoong.getText().toString()) * Integer.parseInt(tvprice.getText().toString()))+"VNĐ");
                     if (ckbox.isChecked()) {
-                        tvtotalall.setText(String.valueOf(Integer.parseInt(tvtotalall.getText().toString()) + Integer.parseInt(tvprice.getText().toString())));
+                        tvtotalall.setText(Integer.parseInt(tvtotalall.getText().toString().substring(0,tvtotalall.getText().toString().length()-3)) + Integer.parseInt(tvprice.getText().toString())+"VNĐ");
                     }
                 });
                 gbtn.setOnClickListener(v1 -> {
@@ -174,23 +172,21 @@ public class Shoppet extends AppCompatActivity {
 
                     } else {
                         tvsoluoong.setText(String.valueOf(Integer.parseInt(tvsoluoong.getText().toString()) - 1));
-                        tvtotalprice.setText(String.valueOf(Integer.parseInt(tvsoluoong.getText().toString()) * Integer.parseInt(tvprice.getText().toString())));
+                        tvtotalprice.setText(String.valueOf(Integer.parseInt(tvsoluoong.getText().toString()) * Integer.parseInt(tvprice.getText().toString()))+"VNĐ");
                         if (ckbox.isChecked()) {
-                            tvtotalall.setText(String.valueOf(Integer.parseInt(tvtotalall.getText().toString()) - Integer.parseInt(tvprice.getText().toString())));
+                            tvtotalall.setText(Integer.parseInt(tvtotalall.getText().toString().substring(0,tvtotalall.getText().toString().length()-3))
+                                    - Integer.parseInt(tvprice.getText().toString())+"VNĐ");
                         }
                     }
                 });
 
-//                ckbox.setOnClickListener(v -> {
-//
-//                });
 
                 findViewById(R.id.btnthanhtoan).setOnClickListener(v -> {
                     if (tvtotalall.getText().toString().equals("0")) {
                         Toast.makeText(Shoppet.this, "Bạn hãy chọn sản phẩm muốn mua", Toast.LENGTH_SHORT).show();
                     } else {
                         try {
-                            db.orderDAO().insert(new Order(getIntent().getExtras().getString("idcart"), totalcheck, currentDate, Integer.parseInt(tvtotalall.getText().toString()),"Chưa nhận hàng"));
+                            db.orderDAO().insert(new Order(getIntent().getExtras().getString("idcart"), totalcheck, currentDate, Integer.parseInt(tvtotalall.getText().toString().substring(0,tvtotalall.getText().toString().length()-3)),"Chưa nhận hàng"));
                             ArrayList<Order> listorder = (ArrayList<Order>) db.orderDAO().getAll();
                             Order order = listorder.get(listorder.size()-1);
 

@@ -21,11 +21,5 @@
 <!--        android:icon="@drawable/ic_baseline_search_24"-->
 <!--        app:showAsAction="always"-->
 <!--        />-->
-    <item
-        android:id="@+id/btnshop"
-        android:orderInCategory="200"
-        android:title="Shop"
-        android:icon="@drawable/ic_baseline_shopping_cart_24"
-        app:showAsAction="always"
-        />
+
 </menu>
