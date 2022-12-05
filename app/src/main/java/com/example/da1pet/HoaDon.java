@@ -63,7 +63,7 @@ public class HoaDon extends AppCompatActivity {
             holder.tv_order_id.setText(String.valueOf(holder.order.getId_order()));
             holder.tv_order_date.setText(holder.order.getDate());
             holder.tvitem.setText(holder.order.getTotal()+" item");
-            holder.tv_total.setText(String.valueOf(holder.order.getThanhToan()));
+            holder.tv_total.setText(String.valueOf(holder.order.getThanhToan())+" VNĐ");
             holder.tvstatus.setText(holder.order.getStatus());
         }
 

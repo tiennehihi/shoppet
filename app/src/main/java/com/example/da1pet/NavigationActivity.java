@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ActionMenuView;
 import android.widget.SearchView;
 
 import com.example.da1pet.DbRoom.DbRoom;
 import com.example.da1pet.Model.ProductsViewModel;
+import com.example.da1pet.Shop.Shoppet;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -65,6 +67,8 @@ public class NavigationActivity extends AppCompatActivity {
                 menuItem3.setVisible(false);
                 MenuItem menuItem4 = menu.findItem(R.id.nav_Khachhang);
                 menuItem4.setVisible(false);
+                MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
+                menuItem5.setVisible(false);
             } else {
                 if (getIntent().getExtras().getString("username").equals("admin")) {
                     menu = navigationView.getMenu();
@@ -72,12 +76,16 @@ public class NavigationActivity extends AppCompatActivity {
                     menuItem1.setVisible(true);
                     MenuItem menuItem4 = menu.findItem(R.id.nav_Khachhang);
                     menuItem4.setVisible(true);
+                    MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
+                    menuItem5.setVisible(true);
                 } else {
                     menu = navigationView.getMenu();
                     MenuItem menuItem1 = menu.findItem(R.id.addproduct);
                     menuItem1.setVisible(false);
                     MenuItem menuItem4 = menu.findItem(R.id.nav_Khachhang);
                     menuItem4.setVisible(false);
+                    MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
+                    menuItem5.setVisible(false);
                 }
                 menu = navigationView.getMenu();
                 menuItem = menu.findItem(R.id.nav_login);
@@ -115,6 +123,20 @@ public class NavigationActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.navigation, menu);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.search));
+        menu.findItem(R.id.btngiohang).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if (getIntent().getExtras().getString("username").equals("")){
+                    Intent intent = new Intent(NavigationActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(NavigationActivity.this, Shoppet.class);
+                    intent.putExtra("idcart",getIntent().getExtras().getString("username"));
+                    startActivity(intent);
+                }
+                return false;
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

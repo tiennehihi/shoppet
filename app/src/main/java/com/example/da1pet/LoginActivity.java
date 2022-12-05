@@ -64,11 +64,12 @@ public class LoginActivity extends AppCompatActivity {
             Window window = alertDialog.getWindow();
             window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
-            TextInputLayout txtIdUser, txtName, txtPhone, txtPassword;
+            TextInputLayout txtIdUser, txtName, txtPhone, txtPassword,txtaddress;
             txtIdUser = view.findViewById(R.id.ed_idUser);
             txtName = view.findViewById(R.id.ed_Name);
             txtPhone = view.findViewById(R.id.ed_Number);
             txtPassword = view.findViewById(R.id.ed_pass);
+            txtaddress = view.findViewById(R.id.ed_address);
             Button btnSave = view.findViewById(R.id.btn_register);
             //
             btnSave.setOnClickListener(v1 -> {
@@ -76,10 +77,11 @@ public class LoginActivity extends AppCompatActivity {
                 String name = txtName.getEditText().getText().toString();
                 String phone = txtPhone.getEditText().getText().toString();
                 String password = txtPassword.getEditText().getText().toString();
-                if(checkValidate(idUser,name,phone,password)){
+                String address = txtaddress.getEditText().getText().toString();
+                if(checkValidate(idUser,name,phone,password,address)){
                     try {
                         Log.i("TAG", idUser + " " + name + " " + phone + " " + password);
-                        db.userDAO().insert(new User(idUser,name,phone,password));
+                        db.userDAO().insert(new User(idUser,name,phone,password,address));
                         alertDialog.dismiss();
                         Toast.makeText(this, "DANG KY THANH CONG", Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
@@ -141,8 +143,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-    private boolean checkValidate(String idUser, String name, String phone, String password) {
-        return !(idUser.isEmpty() || name.isEmpty() || phone.isEmpty() || password.isEmpty());
+    private boolean checkValidate(String idUser, String name, String phone, String password,String address) {
+        return !(idUser.isEmpty() || name.isEmpty() || phone.isEmpty() || password.isEmpty()) || address.isEmpty();
     }
 
     private void rememberUser(String strUser, String strPass, boolean checked) {

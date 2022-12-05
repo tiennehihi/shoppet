@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Hủy đơn"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#FFC107"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Lý do hủy đơn"
+        android:layout_height="wrap_content"
+        android:id="@+id/edthuydon"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/btnhuy"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            android:text="Hủy"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:id="@+id/btnhd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hủy đơn"/>
+    </LinearLayout>
+</LinearLayout>

@@ -13,16 +13,27 @@ public class User {
     private String name;
     private String number;
     private String password;
+    private String address;
 
 
     public User(String name) {
         this.name = name;
     }
-    public User(@NonNull String id_user, String name, String number, String password) {
+
+    public User(@NonNull String id_user, String name, String number, String password, String address) {
         this.id_user = id_user;
         this.name = name;
         this.number = number;
         this.password = password;
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public User() {

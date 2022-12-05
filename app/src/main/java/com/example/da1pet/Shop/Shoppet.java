@@ -186,7 +186,7 @@ public class Shoppet extends AppCompatActivity {
                         Toast.makeText(Shoppet.this, "Bạn hãy chọn sản phẩm muốn mua", Toast.LENGTH_SHORT).show();
                     } else {
                         try {
-                            db.orderDAO().insert(new Order(getIntent().getExtras().getString("idcart"), totalcheck, currentDate, Integer.parseInt(tvtotalall.getText().toString().substring(0,tvtotalall.getText().toString().length()-3)),"Chưa nhận hàng"));
+                            db.orderDAO().insert(new Order(getIntent().getExtras().getString("idcart"), totalcheck, currentDate, Integer.parseInt(tvtotalall.getText().toString().substring(0,tvtotalall.getText().toString().length()-3)),"Chờ xác nhận"));
                             ArrayList<Order> listorder = (ArrayList<Order>) db.orderDAO().getAll();
                             Order order = listorder.get(listorder.size()-1);
 

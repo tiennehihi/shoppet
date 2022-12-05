@@ -30,6 +30,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:scaleType="center"
                 android:id="@+id/imageviewproduct"/>
             <TableLayout
 
@@ -123,21 +124,39 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
-        android:layout_height="80dp">
-        <Button
+        android:layout_height="60dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Thêm vào giỏ hàng"
-            android:layout_weight="1"
-            android:background="#2196F3"
             android:id="@+id/btnthemspgiohang"
-            />
+            android:orientation="vertical"
+            android:background="#2196F3"
+            android:layout_weight="1">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_add_shopping_cart_24"
+                android:tint="#FFFFFF"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:text="THÊM VÀO GIỎ HÀNG"
+                />
+        </LinearLayout>
+
         <Button
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="match_parent"
             android:background="#E12727"
             android:id="@+id/btnbuypr"
+            android:textColor="@color/white"
             android:text="Mua sản phẩm"/>
     </LinearLayout>
 

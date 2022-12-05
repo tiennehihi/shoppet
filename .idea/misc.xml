@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable-v24/ic_books.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/drawable/home_slideshow.xml" value="0.194" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_delete_product.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_don_hang.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_hoa_don.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_hoa_don_chi_tiet.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/activity_laucher.xml" value="0.25416666666666665" />
@@ -25,7 +26,9 @@
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/content_navigation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/dialog_buy.xml" value="0.264" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/dialog_dangky.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/dialog_huydon.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_change_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_don_hang_fagment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_product.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/fragment_user.xml" value="0.25416666666666665" />
@@ -36,8 +39,10 @@
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/nav_header_navigation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/progrid.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/rowcart.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/rowdonhang.xml" value="0.253125" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/roworder.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/roworderdetail.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/layout/rowthongtindonhang.xml" value="0.253125" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/menu/activity_navactivity_drawer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dai/AndroidStudioProjects/Da1Pet/app/src/main/res/menu/navigation.xml" value="0.25416666666666665" />

@@ -41,12 +41,11 @@ public class LCHMainActivity2 extends AppCompatActivity {
             public void run() {
                 DbRoom db = DbRoom.getInstance(LCHMainActivity2.this);
                 if(db.userDAO().getAll().size() == 0){
-                    db.userDAO().insert(new User("admin","Đinh Thành Huân","0799187604","123"));
+                    db.userDAO().insert(new User("admin","Đinh Thành Huân","0799187604","123","Hà Nội"));
                 }
                 Intent intent = new Intent(LCHMainActivity2.this, NavigationActivity.class);
                 intent.putExtra("username","");
                 startActivity(intent);
-                
             }
         }, 2000);
     }

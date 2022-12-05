@@ -33,6 +33,7 @@ public class HoaDonChiTiet extends AppCompatActivity {
     ArrayList<InnerJoin> list;
     String TAG = "zzzzzzz";
     DbRoom db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,24 +46,34 @@ public class HoaDonChiTiet extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         list = (ArrayList<InnerJoin>) db.orderDetailDAO().getOrder(bundle.getInt("id_order"));
         int tong = 0;
-        for (int i = 0 ; i<list.size();i++){
-            InnerJoin innerJoin  = list.get(i);
-            tong+=innerJoin.getGia();
+        for (int i = 0; i < list.size(); i++) {
+            InnerJoin innerJoin = list.get(i);
+            tong += innerJoin.getGia();
         }
         TextView tvtongtien = findViewById(R.id.tvtongtien);
-        tvtongtien.setText(String.valueOf(tong));
+        tvtongtien.setText(tong + " VNĐ");
         OrderAdapter adapter = new OrderAdapter(list);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rv.setLayoutManager(linearLayoutManager);
         rv.setAdapter(adapter);
         Button btnnhandon = findViewById(R.id.btnnhandon);
         Button btnhuydon = findViewById(R.id.btnhuydon);
         List<String> listorder = db.orderDAO().getstatus(bundle.getInt("id_order"));
-        if (listorder.get(0).equals("Đã Nhận hàng")||listorder.get(0).equals("Đơn hàng đã hủy")){
-            btnnhandon.setEnabled(false);
-            btnnhandon.setBackgroundColor(Color.parseColor("#EC6565"));
-            btnhuydon.setEnabled(false);
+        try {
+            if (listorder.get(0).equals("Chờ xác nhận")) {
+                btnnhandon.setEnabled(false);
+                btnnhandon.setBackgroundColor(Color.parseColor("#EC6565"));
+            } else if (listorder.get(0).equals("Đang giao hàng")) {
+                btnhuydon.setEnabled(false);
+            } else if (listorder.get(0).equals("Đã Nhận hàng") || listorder.get(0).equals("Đơn hàng đã hủy") || listorder.get(0).substring(0, 15).equals("Đơn hàng đã hủy")) {
+                btnnhandon.setEnabled(false);
+                btnnhandon.setBackgroundColor(Color.parseColor("#EC6565"));
+                btnhuydon.setEnabled(false);
+            }
+        }catch (Exception e){
+            e.getMessage();
         }
+
         findViewById(R.id.btnnhandon).setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Thông báo");
@@ -70,9 +81,9 @@ public class HoaDonChiTiet extends AppCompatActivity {
             builder.setPositiveButton("Đã Nhận hàng", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    db.orderDAO().updateStatus("Đã Nhận hàng",bundle.getInt("id_order"));
-                    Intent intent = new Intent(HoaDonChiTiet.this,HoaDon.class);
-                    intent.putExtra("username",getIntent().getExtras().getString("username"));
+                    db.orderDAO().updateStatus("Đã Nhận hàng", bundle.getInt("id_order"));
+                    Intent intent = new Intent(HoaDonChiTiet.this, HoaDon.class);
+                    intent.putExtra("username", getIntent().getExtras().getString("username"));
                     startActivity(intent);
                 }
             });
@@ -82,7 +93,7 @@ public class HoaDonChiTiet extends AppCompatActivity {
 
                 }
             });
-            builder.show();
+             builder.show();
         });
         findViewById(R.id.btnhuydon).setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -92,9 +103,9 @@ public class HoaDonChiTiet extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Toast.makeText(HoaDonChiTiet.this, "Bạn đã hủy đơn", Toast.LENGTH_SHORT).show();
-                    db.orderDAO().updateStatus("Hủy đơn hàng",bundle.getInt("id_order"));
-                    Intent intent = new Intent(HoaDonChiTiet.this,HoaDon.class);
-                    intent.putExtra("username",getIntent().getExtras().getString("username"));
+                    db.orderDAO().updateStatus("Đơn hàng đã hủy", bundle.getInt("id_order"));
+                    Intent intent = new Intent(HoaDonChiTiet.this, HoaDon.class);
+                    intent.putExtra("username", getIntent().getExtras().getString("username"));
                     startActivity(intent);
                 }
             });
@@ -109,8 +120,10 @@ public class HoaDonChiTiet extends AppCompatActivity {
 
         });
     }
+
     public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
         ArrayList<InnerJoin> list;
+
         public OrderAdapter(ArrayList<InnerJoin> list) {
             this.list = list;
         }
@@ -118,7 +131,7 @@ public class HoaDonChiTiet extends AppCompatActivity {
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.roworderdetail,parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.roworderdetail, parent, false);
             return new ViewHolder(view);
         }
 
@@ -137,7 +150,8 @@ public class HoaDonChiTiet extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             InnerJoin innerOrder;
-            TextView tvtenpr,tvgiapr,tvsoluong;
+            TextView tvtenpr, tvgiapr, tvsoluong;
+
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 tvtenpr = itemView.findViewById(R.id.tvnamepr);

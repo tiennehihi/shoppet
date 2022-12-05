@@ -31,4 +31,6 @@ public interface UserDAO {
     void doipass(String newpass,String id);
     @Query("select *from User where User.name = :name limit 1")
     List<User> getUserByID(String name);
+    @Query("select * from user where user.id_user = :id")
+    List<User> getuser(String id);
 }

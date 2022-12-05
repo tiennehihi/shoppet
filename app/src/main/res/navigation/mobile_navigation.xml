@@ -37,4 +37,8 @@
         android:name="com.example.da1pet.ProductFragment"
         android:label="Sản phẩm"
         tools:layout="@layout/fragment_product"/>
+    <fragment android:id="@+id/nav_donhang"
+        android:name="com.example.da1pet.Fragment.DonHangFagment"
+        tools:layout="@layout/fragment_don_hang_fagment"
+        android:label="Đơn hàng"/>
 </navigation>

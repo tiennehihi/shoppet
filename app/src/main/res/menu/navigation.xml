@@ -14,12 +14,13 @@
         android:icon="@drawable/ic_baseline_search_24"
         app:showAsAction="always"
         android:visible="true"/>
-<!--    <item-->
-<!--        android:id="@+id/search"-->
-<!--        android:orderInCategory="200"-->
-<!--        android:title="Search"-->
-<!--        android:icon="@drawable/ic_baseline_search_24"-->
-<!--        app:showAsAction="always"-->
-<!--        />-->
+    <item
+        android:id="@+id/btngiohang"
+        android:orderInCategory="200"
+        android:title="Search"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        app:showAsAction="always"
+        android:visible="true"
+        />
 
 </menu>

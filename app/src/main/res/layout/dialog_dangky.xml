@@ -85,9 +85,27 @@
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:textColor="@color/black"
                 android:hint="Password"/>
-        </com.google.android.material.textfield.TextInputLayout>
 
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_address"
+            android:background="@drawable/backgournd_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColorHint="@color/black"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_margin="15dp"
+                android:layout_height="match_parent"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:hint="Address"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:background="@drawable/border_plaintext"
             android:id="@+id/btn_register"

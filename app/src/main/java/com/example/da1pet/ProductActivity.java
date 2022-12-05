@@ -150,7 +150,7 @@ public class ProductActivity extends AppCompatActivity {
                                db.orderDAO().insert(
                                        new Order(bundle.getString("username")
                                                ,1,
-                                               currentDate,Integer.parseInt(tvtongtien.getText().toString()),"Chưa nhận hàng"));
+                                               currentDate,Integer.parseInt(tvtongtien.getText().toString()),"Chờ xác nhận"));
                                listorder = (ArrayList<Order>) db.orderDAO().getAll();
                                Order order = listorder.get(listorder.size()-1);
                                db.orderDetailDAO().insert(

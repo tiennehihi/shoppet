@@ -11,6 +11,7 @@ import androidx.room.Update;
 import com.example.da1pet.Model.Order_detail;
 import com.example.da1pet.innerjoin.InnerJoin;
 import com.example.da1pet.innerjoin.InnerOrder;
+import com.example.da1pet.innerjoin.InnerThongTInDonHang;
 
 import java.util.List;
 
@@ -33,4 +34,10 @@ public interface OrderDetailDAO {
 
     @Query("select products.name_products as nameproduct,order_detail.quantity,products.price*order_detail.quantity as gia from order_detail inner join products on order_detail.id_products = products.id_products where order_detail.id_order = :id")
     List<InnerJoin> getOrder(Integer id);
+
+    @Query("select products.img_product as img,products.name_products as name,order_detail.quantity as soluong,products.price as price " +
+            "from order_detail " +
+            "inner join products on products.id_products = order_detail.id_products " +
+            "where order_detail.id_order = :id")
+    List<InnerThongTInDonHang> getThongTinDonHang(Integer id);
 }
