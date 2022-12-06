@@ -12,9 +12,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,12 +27,13 @@ import com.example.da1pet.Model.Products;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ProductFragment extends Fragment {
     RecyclerView rv;
     ArrayList<Products> list;
     DbRoom db;
-
+    RVAdapter adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,7 +48,24 @@ public class ProductFragment extends Fragment {
         rv = view.findViewById(R.id.rvsanpham);
         db = DbRoom.getInstance(this.getActivity());
         list = (ArrayList<Products>) db.productsDAO().getAll();
-        RVAdapter adapter = new RVAdapter(list);
+        EditText edtsearch = view.findViewById(R.id.edt_search);
+        edtsearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+        adapter = new RVAdapter(list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity(),LinearLayoutManager.VERTICAL,false);
         rv.setLayoutManager(linearLayoutManager);
         rv.setAdapter(adapter);
@@ -53,6 +75,15 @@ public class ProductFragment extends Fragment {
             startActivity(intent);
         });
 
+    }
+    public void filter(String s){
+        ArrayList<Products> list1 = new ArrayList<>();
+        for (Products products : list){
+            if (products.getName_products().toLowerCase().contains(s.toLowerCase(Locale.ROOT))){
+                list1.add(products);
+            }
+            adapter.fillterlist(list1);
+        }
     }
     public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder>{
         ArrayList<Products> list;
@@ -114,6 +145,10 @@ public class ProductFragment extends Fragment {
                     builder.show();
                 });
             }
+        }
+        public void fillterlist(ArrayList<Products> list1){
+            list = list1;
+            notifyDataSetChanged();
         }
     }
 }
