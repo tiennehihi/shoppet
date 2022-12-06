@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.example.da1pet.DbRoom.DbRoom;
@@ -17,6 +18,7 @@ import com.example.da1pet.R;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
+import java.util.Date;
 
 
 public class DoanhThuFragment extends Fragment {
@@ -42,17 +44,29 @@ public class DoanhThuFragment extends Fragment {
         final  int year = calendar.get(Calendar.YEAR);
 
         txtTuNgay.getEditText().setOnClickListener(view1 -> {
-            // DatePickerDialog
-            DatePickerDialog dp = new DatePickerDialog(context, (datePicker, i, i1, i2) ->{
-                String month2 = (i1+1)+"";
-                String day2 = i2 +"";
-                if((i1+1)<10)
-                    month2 = "0" + month2;
-                if(i2<10)
-                    day2 = "0" + day2;
-                txtTuNgay.getEditText().setText(i+"-"+month2+"-"+day2);
-            },day,month,year);
+
+                DatePickerDialog dp = new DatePickerDialog(context, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+
+                    txtTuNgay.getEditText().setText(dayOfMonth+"-"+(month+1)+"-"+year);
+                }
+            },year,month,day);
             dp.show();
+
+            // DatePickerDialog
+            //Date currentTime = Calendar.getInstance().getTime();
+        //    DatePickerDialog dp = new DatePickerDialog(context, (datePicker, i, i1, i2) ->{
+//                String month2 = (i1+1)+"";
+//                String day2 = i2 +"";
+//                if((i1+1)<10)
+//                    month2 = "0" + month2;
+//                if(i2<10)
+//                    day2 = "0" + day2;
+            //    txtTuNgay.getEditText().setText(day+"-"+month+"-"+year);
+            //},day,month,year);
+
         });
 
         txtDenNgay.getEditText().setOnClickListener(view1 -> {
