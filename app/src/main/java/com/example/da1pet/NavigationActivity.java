@@ -69,6 +69,7 @@ public class NavigationActivity extends AppCompatActivity {
                 menuItem4.setVisible(false);
                 MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
                 menuItem5.setVisible(false);
+
             } else {
                 if (getIntent().getExtras().getString("username").equals("admin")) {
                     menu = navigationView.getMenu();
@@ -78,6 +79,7 @@ public class NavigationActivity extends AppCompatActivity {
                     menuItem4.setVisible(true);
                     MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
                     menuItem5.setVisible(true);
+
                 } else {
                     menu = navigationView.getMenu();
                     MenuItem menuItem1 = menu.findItem(R.id.addproduct);
@@ -86,6 +88,8 @@ public class NavigationActivity extends AppCompatActivity {
                     menuItem4.setVisible(false);
                     MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
                     menuItem5.setVisible(false);
+                    MenuItem menuItem6 = menu.findItem(R.id.nav_DoanhThu);
+                    menuItem6.setVisible(false);
                 }
                 menu = navigationView.getMenu();
                 menuItem = menu.findItem(R.id.nav_login);

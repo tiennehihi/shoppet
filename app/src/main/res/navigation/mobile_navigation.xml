@@ -33,12 +33,19 @@
         android:name="com.example.da1pet.Fragment.ChangePasswordFragment"
         android:label="Đổi mật khẩu"
         tools:layout="@layout/fragment_change_password" />
+
     <fragment android:id="@+id/addproduct"
         android:name="com.example.da1pet.ProductFragment"
         android:label="Sản phẩm"
         tools:layout="@layout/fragment_product"/>
+
     <fragment android:id="@+id/nav_donhang"
         android:name="com.example.da1pet.Fragment.DonHangFagment"
         tools:layout="@layout/fragment_don_hang_fagment"
         android:label="Đơn hàng"/>
+    <fragment
+        android:id="@+id/nav_DoanhThu"
+        android:name="com.example.da1pet.Fragment.DoanhThuFragment"
+        android:label="Doanh thu"
+        tools:layout="@layout/fragment_doanh_thu" />
 </navigation>

@@ -29,4 +29,5 @@ public interface Cart_itemDAO {
             "where Cart_item.id_cart = :idcart")
     List<InnerCart> getAllCartItemById(String idcart);
 
+
 }
