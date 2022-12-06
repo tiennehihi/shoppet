@@ -5,60 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProductFragment">
-
-    <androidx.cardview.widget.CardView
+    <EditText
+        android:id="@+id/edt_search"
+        android:hint="Tìm kiếm"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:maxLines="1"/>
 
-        <TextView
-            android:gravity="center"
-            android:id="@+id/btnthemsanpham"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/backgournd_input_layout"
-            android:text="Thêm sản phẩm"
-            android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold">
-
-        </TextView>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:gravity="center"
-            android:id="@+id/btnsuasanpham"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/backgournd_input_layout"
-            android:text="Sửa sản phẩm"
-            android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold">
-
-        </TextView>
-    </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:gravity="center"
-            android:id="@+id/btnxoasanpham"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/backgournd_input_layout"
-            android:text="Xóa sản phẩm"
-            android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold">
-
-        </TextView>
-    </androidx.cardview.widget.CardView>
+            android:layout_height="match_parent"
+            android:id="@+id/rvsanpham"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="10dp"
+            android:tint="@color/white"
+            android:id="@+id/flbtn"
+            android:src="@drawable/ic_add"/>
+    </FrameLayout>
 
 </LinearLayout>

@@ -44,6 +44,12 @@ public class DonHang extends AppCompatActivity {
         list = (ArrayList<InnerThongTInDonHang>) db.orderDetailDAO().getThongTinDonHang(bundle.getInt("id_order"));
         List<User> userList = db.userDAO().getuser(bundle.getString("username1"));
         User user = userList.get(0);
+        findViewById(R.id.btnback).setOnClickListener(v -> {
+            Intent intent = new Intent(this,NavigationActivity.class);
+            intent.putExtra("username",bundle.getString("username1"));
+            intent.putExtra("item","donhang");
+            startActivity(intent);
+        });
         tvname = findViewById(R.id.tvname);
         tvsdt = findViewById(R.id.tvsdt);
         tvaddress = findViewById(R.id.tvaddress);
@@ -60,6 +66,11 @@ public class DonHang extends AppCompatActivity {
         rv.setAdapter(adapter);
         findViewById(R.id.btngiaohang).setOnClickListener(v -> {
             db.orderDAO().updateStatus("Đang giao hàng", bundle.getInt("id_order"));
+            Toast.makeText(this, "Đơn hàng đang được giao", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,NavigationActivity.class);
+            intent.putExtra("username",bundle.getString("username1"));
+            intent.putExtra("item","donhang");
+            startActivity(intent);
         });
         findViewById(R.id.btnhuydon).setOnClickListener(v -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -73,6 +84,10 @@ public class DonHang extends AppCompatActivity {
                 db.orderDAO().updateStatus("Đơn hàng đã hủy ( " + edthuydon.getText().toString() + ")", bundle.getInt("id_order"));
                 Toast.makeText(this, "Đơn hàng đã bị hủy", Toast.LENGTH_SHORT).show();
                 alertDialog.dismiss();
+                Intent intent = new Intent(this,NavigationActivity.class);
+                intent.putExtra("username",bundle.getString("username1"));
+                intent.putExtra("item","donhang");
+                startActivity(intent);
             });
             alertDialog = builder.show();
         });

@@ -34,7 +34,6 @@ public class DonHangFagment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_don_hang_fagment, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -65,6 +64,7 @@ public class DonHangFagment extends Fragment {
         public void onBindViewHolder(@NonNull RVAdapter.Viewholder holder, int position) {
             holder.donhang = list.get(position);
             holder.tvIdUser.setText(holder.donhang.getName());
+            holder.tvdate.setText(holder.donhang.getDate());
             holder.tvsoluong.setText(holder.donhang.getTotal()+"item");
             holder.tvgia.setText(holder.donhang.getThanhToan()+" VNĐ");
         }
@@ -77,12 +77,13 @@ public class DonHangFagment extends Fragment {
 
         public class Viewholder extends RecyclerView.ViewHolder {
             InnerDonHang donhang;
-            TextView tvIdUser,tvsoluong,tvgia;
+            TextView tvIdUser,tvsoluong,tvgia,tvdate;
             public Viewholder(@NonNull View itemView) {
                 super(itemView);
                 tvIdUser = itemView.findViewById(R.id.tvIdUser);
                 tvsoluong = itemView.findViewById(R.id.tvsoluong);
                 tvgia = itemView.findViewById(R.id.tvgia);
+                tvdate = itemView.findViewById(R.id.tvdate);
                 itemView.setOnClickListener(v -> {
                     Intent intent = new Intent(DonHangFagment.this.getActivity(), DonHang.class);
                     InnerDonHang donHang1 = list.get(getAdapterPosition());

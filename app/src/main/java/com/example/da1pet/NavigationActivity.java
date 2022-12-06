@@ -2,6 +2,7 @@ package com.example.da1pet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.widget.ActionMenuView;
 import android.widget.SearchView;
 
 import com.example.da1pet.DbRoom.DbRoom;
+import com.example.da1pet.Fragment.DonHangFagment;
 import com.example.da1pet.Model.ProductsViewModel;
 import com.example.da1pet.Shop.Shoppet;
 import com.google.android.material.snackbar.Snackbar;
@@ -16,6 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.MenuItemCompat;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -32,7 +35,7 @@ public class NavigationActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavigationBinding binding;
     DbRoom db;
-
+    String TAG = "zzzzzzz";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +51,7 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_user, R.id.nav_pass, R.id.addproduct)
+                R.id.nav_home, R.id.nav_user, R.id.nav_pass, R.id.addproduct,R.id.nav_donhang)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_navigation);
@@ -69,6 +72,8 @@ public class NavigationActivity extends AppCompatActivity {
                 menuItem4.setVisible(false);
                 MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
                 menuItem5.setVisible(false);
+                MenuItem menuItem6 = menu.findItem(R.id.navThongke);
+                menuItem6.setVisible(false);
 
             } else {
                 if (getIntent().getExtras().getString("username").equals("admin")) {
@@ -79,7 +84,8 @@ public class NavigationActivity extends AppCompatActivity {
                     menuItem4.setVisible(true);
                     MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
                     menuItem5.setVisible(true);
-
+                    MenuItem menuItem6 = menu.findItem(R.id.navThongke);
+                    menuItem6.setVisible(true);
                 } else {
                     menu = navigationView.getMenu();
                     MenuItem menuItem1 = menu.findItem(R.id.addproduct);
@@ -88,7 +94,7 @@ public class NavigationActivity extends AppCompatActivity {
                     menuItem4.setVisible(false);
                     MenuItem menuItem5 = menu.findItem(R.id.nav_donhang);
                     menuItem5.setVisible(false);
-                    MenuItem menuItem6 = menu.findItem(R.id.nav_DoanhThu);
+                    MenuItem menuItem6 = menu.findItem(R.id.navThongke);
                     menuItem6.setVisible(false);
                 }
                 menu = navigationView.getMenu();
@@ -102,7 +108,7 @@ public class NavigationActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.getMessage();
         }
-
+        
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -113,7 +119,8 @@ public class NavigationActivity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.nav_logout) {
                     Intent intent = new Intent(NavigationActivity.this, LoginActivity.class);
                     startActivity(intent);
-                } else {
+                }
+                else {
                     NavigationUI.onNavDestinationSelected(item, navController);
                     drawer.closeDrawers();
                 }
@@ -121,7 +128,6 @@ public class NavigationActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

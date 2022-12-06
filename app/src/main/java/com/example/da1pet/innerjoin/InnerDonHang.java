@@ -6,13 +6,23 @@ public class InnerDonHang {
     private String name;
     private Integer total;
     private Integer thanhToan;
+    private String date;
 
-    public InnerDonHang(String id_user, Integer id_order, String name, Integer total, Integer thanhToan) {
+    public InnerDonHang(String id_user, Integer id_order, String name, Integer total, Integer thanhToan, String date) {
         this.id_user = id_user;
         this.id_order = id_order;
         this.name = name;
         this.total = total;
         this.thanhToan = thanhToan;
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getId_user() {

@@ -31,7 +31,8 @@
             android:icon="@drawable/order"
             />
 
-        <item android:title="Thống kê">
+        <item android:title="Thống kê"
+            android:id="@+id/navThongke">
 
             <menu>
                 <item android:id="@+id/nav_DoanhThu"
