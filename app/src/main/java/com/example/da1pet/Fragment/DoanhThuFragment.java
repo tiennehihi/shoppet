@@ -55,32 +55,22 @@ public class DoanhThuFragment extends Fragment {
             },year,month,day);
             dp.show();
 
-            // DatePickerDialog
-            //Date currentTime = Calendar.getInstance().getTime();
-        //    DatePickerDialog dp = new DatePickerDialog(context, (datePicker, i, i1, i2) ->{
-//                String month2 = (i1+1)+"";
-//                String day2 = i2 +"";
-//                if((i1+1)<10)
-//                    month2 = "0" + month2;
-//                if(i2<10)
-//                    day2 = "0" + day2;
-            //    txtTuNgay.getEditText().setText(day+"-"+month+"-"+year);
-            //},day,month,year);
 
         });
 
         txtDenNgay.getEditText().setOnClickListener(view1 -> {
-            // DatePickerDialog
-            DatePickerDialog dp = new DatePickerDialog(context, (datePicker, i, i1, i2) ->{
-                String month2 = (i1+1)+"";
-                String day2 = i2 +"";
-                if((i1+1)<10)
-                    month2 = "0" + month2;
-                if(i2<10)
-                    day2 = "0" + day2;
-                txtDenNgay.getEditText().setText(i+"-"+month2+"-"+day2);
-            },day,month,year);
+
+            DatePickerDialog dp = new DatePickerDialog(context, new DatePickerDialog.OnDateSetListener() {
+                @Override
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+
+                    txtDenNgay.getEditText().setText(dayOfMonth+"-"+(month+1)+"-"+year);
+                }
+            },year,month,day);
             dp.show();
+
+
         });
 
         btnDoanhThu.setOnClickListener(view1 -> {
