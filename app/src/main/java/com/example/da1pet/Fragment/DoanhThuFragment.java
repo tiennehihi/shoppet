@@ -49,8 +49,14 @@ public class DoanhThuFragment extends Fragment {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
+                    String month2 = (month+1)+"";
+                    String day2 = dayOfMonth +"";
+                    if((month+1)<10)
+                        month2 = "0" + month2;
+                    if(dayOfMonth<10)
+                        day2 = "0" + day2;
 
-                    txtTuNgay.getEditText().setText(dayOfMonth+"-"+(month+1)+"-"+year);
+                    txtTuNgay.getEditText().setText(day2+"-"+month2+"-"+year);
                 }
             },year,month,day);
             dp.show();
@@ -63,9 +69,14 @@ public class DoanhThuFragment extends Fragment {
             DatePickerDialog dp = new DatePickerDialog(context, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    String month2 = (month+1)+"";
+                    String day2 = dayOfMonth +"";
+                    if((month+1)<10)
+                        month2 = "0" + month2;
+                    if(dayOfMonth<10)
+                        day2 = "0" + day2;
 
-
-                    txtDenNgay.getEditText().setText(dayOfMonth+"-"+(month+1)+"-"+year);
+                    txtDenNgay.getEditText().setText(day2+"-"+month2+"-"+year);
                 }
             },year,month,day);
             dp.show();

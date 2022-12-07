@@ -44,7 +44,7 @@ public interface OrderDAO {
     @Query("select * from `order` where id_order = :id")
     List<Order> getAllById(int id);
 
-    @Query("select sum(thanhToan)  from `order` where status ='Đã nhận hàng' and date between :tuNgay and :denNgay")
+    @Query("select sum(thanhToan)  from `order` where date between :tuNgay and :denNgay")
     int getDoanhThu(String tuNgay, String denNgay);
 }
 
